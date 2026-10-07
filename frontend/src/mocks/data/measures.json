@@ -1,0 +1,1922 @@
+[
+ {
+  "row": {
+   "id": "shark-4",
+   "number": 1,
+   "species_name_in_source": "Somniosus microcephalus",
+   "species_label": "Somniosus microcephalus",
+   "taxonomy_note": null,
+   "measure_kind": "modelled_age",
+   "definition": "modelled biological age",
+   "value_original": "71",
+   "unit_original": "years",
+   "qualifier": null,
+   "uncertainty": {
+    "label": "95.4% апостериорный интервал",
+    "kind": "posterior calibrated age probability range; midpoint +/- half-range",
+    "level_percent": 95.4,
+    "plus_minus": "12",
+    "lower": null,
+    "upper": null,
+    "upper_status": "not_reported"
+   },
+   "subject": {
+    "label": "female shark no.4; TL=258 cm",
+    "sex": "female",
+    "sample_size": "1",
+    "sample_size_scope": "individual; study 28 females"
+   },
+   "conditions": {
+    "setting": "wild",
+    "text": "wild; collected around Greenland 2010-2013"
+   },
+   "method": "Eye-lens radiocarbon; Marine13; constrained Bayesian model",
+   "publication_id": "nielsen2016",
+   "publication_label": "Nielsen 2016",
+   "author_notes": "Not mean lifespan or SD. A index=128.6% is author model diagnostic, not app quality score.",
+   "origin_kind": "own_result",
+   "evidence_ids": [
+    "shark-4-value"
+   ],
+   "context_evidence_ids": [
+    "shark-4-context"
+   ],
+   "related_measure_ids": [],
+   "review_status": "unreviewed",
+   "verification_status": "needs_review"
+  },
+  "evidence": {
+   "document_name": "shark-complete.pdf",
+   "document_version": 1,
+   "page": 21,
+   "printed": "Supplement p16 Table S2 row 4; TL 258 cm",
+   "context": "main PDF2-4; supplement S2 caption PDF21",
+   "doi": "10.1126/science.aaf1703"
+  }
+ },
+ {
+  "row": {
+   "id": "shark-5",
+   "number": 2,
+   "species_name_in_source": "Somniosus microcephalus",
+   "species_label": "Somniosus microcephalus",
+   "taxonomy_note": null,
+   "measure_kind": "modelled_age",
+   "definition": "modelled biological age",
+   "value_original": "73",
+   "unit_original": "years",
+   "qualifier": null,
+   "uncertainty": {
+    "label": "95.4% апостериорный интервал",
+    "kind": "posterior calibrated age probability range; midpoint +/- half-range",
+    "level_percent": 95.4,
+    "plus_minus": "14",
+    "lower": null,
+    "upper": null,
+    "upper_status": "not_reported"
+   },
+   "subject": {
+    "label": "female shark no.5; TL=264 cm",
+    "sex": "female",
+    "sample_size": "1",
+    "sample_size_scope": "individual; study 28 females"
+   },
+   "conditions": {
+    "setting": "wild",
+    "text": "wild; collected around Greenland 2010-2013"
+   },
+   "method": "Eye-lens radiocarbon; Marine13; constrained Bayesian model",
+   "publication_id": "nielsen2016",
+   "publication_label": "Nielsen 2016",
+   "author_notes": "Not mean lifespan or SD. A index=130.2% is author model diagnostic, not app quality score.",
+   "origin_kind": "own_result",
+   "evidence_ids": [
+    "shark-5-value"
+   ],
+   "context_evidence_ids": [
+    "shark-5-context"
+   ],
+   "related_measure_ids": [],
+   "review_status": "unreviewed",
+   "verification_status": "needs_review"
+  },
+  "evidence": {
+   "document_name": "shark-complete.pdf",
+   "document_version": 1,
+   "page": 21,
+   "printed": "Supplement p16 Table S2 row 5; TL 264 cm",
+   "context": "main PDF2-4; supplement S2 caption PDF21",
+   "doi": "10.1126/science.aaf1703"
+  }
+ },
+ {
+  "row": {
+   "id": "shark-6",
+   "number": 3,
+   "species_name_in_source": "Somniosus microcephalus",
+   "species_label": "Somniosus microcephalus",
+   "taxonomy_note": null,
+   "measure_kind": "modelled_age",
+   "definition": "modelled biological age",
+   "value_original": "80",
+   "unit_original": "years",
+   "qualifier": null,
+   "uncertainty": {
+    "label": "95.4% апостериорный интервал",
+    "kind": "posterior calibrated age probability range; midpoint +/- half-range",
+    "level_percent": 95.4,
+    "plus_minus": "13",
+    "lower": null,
+    "upper": null,
+    "upper_status": "not_reported"
+   },
+   "subject": {
+    "label": "female shark no.6; TL=276 cm",
+    "sex": "female",
+    "sample_size": "1",
+    "sample_size_scope": "individual; study 28 females"
+   },
+   "conditions": {
+    "setting": "wild",
+    "text": "wild; collected around Greenland 2010-2013"
+   },
+   "method": "Eye-lens radiocarbon; Marine13; constrained Bayesian model",
+   "publication_id": "nielsen2016",
+   "publication_label": "Nielsen 2016",
+   "author_notes": "Not mean lifespan or SD. A index=129.6% is author model diagnostic, not app quality score.",
+   "origin_kind": "own_result",
+   "evidence_ids": [
+    "shark-6-value"
+   ],
+   "context_evidence_ids": [
+    "shark-6-context"
+   ],
+   "related_measure_ids": [],
+   "review_status": "unreviewed",
+   "verification_status": "needs_review"
+  },
+  "evidence": {
+   "document_name": "shark-complete.pdf",
+   "document_version": 1,
+   "page": 21,
+   "printed": "Supplement p16 Table S2 row 6; TL 276 cm",
+   "context": "main PDF2-4; supplement S2 caption PDF21",
+   "doi": "10.1126/science.aaf1703"
+  }
+ },
+ {
+  "row": {
+   "id": "shark-7",
+   "number": 4,
+   "species_name_in_source": "Somniosus microcephalus",
+   "species_label": "Somniosus microcephalus",
+   "taxonomy_note": null,
+   "measure_kind": "modelled_age",
+   "definition": "modelled biological age",
+   "value_original": "96",
+   "unit_original": "years",
+   "qualifier": null,
+   "uncertainty": {
+    "label": "95.4% апостериорный интервал",
+    "kind": "posterior calibrated age probability range; midpoint +/- half-range",
+    "level_percent": 95.4,
+    "plus_minus": "15",
+    "lower": null,
+    "upper": null,
+    "upper_status": "not_reported"
+   },
+   "subject": {
+    "label": "female shark no.7; TL=306 cm",
+    "sex": "female",
+    "sample_size": "1",
+    "sample_size_scope": "individual; study 28 females"
+   },
+   "conditions": {
+    "setting": "wild",
+    "text": "wild; collected around Greenland 2010-2013"
+   },
+   "method": "Eye-lens radiocarbon; Marine13; constrained Bayesian model",
+   "publication_id": "nielsen2016",
+   "publication_label": "Nielsen 2016",
+   "author_notes": "Not mean lifespan or SD. A index=139.4% is author model diagnostic, not app quality score.",
+   "origin_kind": "own_result",
+   "evidence_ids": [
+    "shark-7-value"
+   ],
+   "context_evidence_ids": [
+    "shark-7-context"
+   ],
+   "related_measure_ids": [],
+   "review_status": "unreviewed",
+   "verification_status": "needs_review"
+  },
+  "evidence": {
+   "document_name": "shark-complete.pdf",
+   "document_version": 1,
+   "page": 21,
+   "printed": "Supplement p16 Table S2 row 7; TL 306 cm",
+   "context": "main PDF2-4; supplement S2 caption PDF21",
+   "doi": "10.1126/science.aaf1703"
+  }
+ },
+ {
+  "row": {
+   "id": "shark-8",
+   "number": 5,
+   "species_name_in_source": "Somniosus microcephalus",
+   "species_label": "Somniosus microcephalus",
+   "taxonomy_note": null,
+   "measure_kind": "modelled_age",
+   "definition": "modelled biological age",
+   "value_original": "99",
+   "unit_original": "years",
+   "qualifier": null,
+   "uncertainty": {
+    "label": "95.4% апостериорный интервал",
+    "kind": "posterior calibrated age probability range; midpoint +/- half-range",
+    "level_percent": 95.4,
+    "plus_minus": "15",
+    "lower": null,
+    "upper": null,
+    "upper_status": "not_reported"
+   },
+   "subject": {
+    "label": "female shark no.8; TL=312 cm",
+    "sex": "female",
+    "sample_size": "1",
+    "sample_size_scope": "individual; study 28 females"
+   },
+   "conditions": {
+    "setting": "wild",
+    "text": "wild; collected around Greenland 2010-2013"
+   },
+   "method": "Eye-lens radiocarbon; Marine13; constrained Bayesian model",
+   "publication_id": "nielsen2016",
+   "publication_label": "Nielsen 2016",
+   "author_notes": "Not mean lifespan or SD. A index=143.0% is author model diagnostic, not app quality score.",
+   "origin_kind": "own_result",
+   "evidence_ids": [
+    "shark-8-value"
+   ],
+   "context_evidence_ids": [
+    "shark-8-context"
+   ],
+   "related_measure_ids": [],
+   "review_status": "unreviewed",
+   "verification_status": "needs_review"
+  },
+  "evidence": {
+   "document_name": "shark-complete.pdf",
+   "document_version": 1,
+   "page": 21,
+   "printed": "Supplement p16 Table S2 row 8; TL 312 cm",
+   "context": "main PDF2-4; supplement S2 caption PDF21",
+   "doi": "10.1126/science.aaf1703"
+  }
+ },
+ {
+  "row": {
+   "id": "shark-9",
+   "number": 6,
+   "species_name_in_source": "Somniosus microcephalus",
+   "species_label": "Somniosus microcephalus",
+   "taxonomy_note": null,
+   "measure_kind": "modelled_age",
+   "definition": "modelled biological age",
+   "value_original": "102",
+   "unit_original": "years",
+   "qualifier": null,
+   "uncertainty": {
+    "label": "95.4% апостериорный интервал",
+    "kind": "posterior calibrated age probability range; midpoint +/- half-range",
+    "level_percent": 95.4,
+    "plus_minus": "15",
+    "lower": null,
+    "upper": null,
+    "upper_status": "not_reported"
+   },
+   "subject": {
+    "label": "female shark no.9; TL=318 cm",
+    "sex": "female",
+    "sample_size": "1",
+    "sample_size_scope": "individual; study 28 females"
+   },
+   "conditions": {
+    "setting": "wild",
+    "text": "wild; collected around Greenland 2010-2013"
+   },
+   "method": "Eye-lens radiocarbon; Marine13; constrained Bayesian model",
+   "publication_id": "nielsen2016",
+   "publication_label": "Nielsen 2016",
+   "author_notes": "Not mean lifespan or SD. A index=136.4% is author model diagnostic, not app quality score.",
+   "origin_kind": "own_result",
+   "evidence_ids": [
+    "shark-9-value"
+   ],
+   "context_evidence_ids": [
+    "shark-9-context"
+   ],
+   "related_measure_ids": [],
+   "review_status": "unreviewed",
+   "verification_status": "needs_review"
+  },
+  "evidence": {
+   "document_name": "shark-complete.pdf",
+   "document_version": 1,
+   "page": 21,
+   "printed": "Supplement p16 Table S2 row 9; TL 318 cm",
+   "context": "main PDF2-4; supplement S2 caption PDF21",
+   "doi": "10.1126/science.aaf1703"
+  }
+ },
+ {
+  "row": {
+   "id": "shark-10",
+   "number": 7,
+   "species_name_in_source": "Somniosus microcephalus",
+   "species_label": "Somniosus microcephalus",
+   "taxonomy_note": null,
+   "measure_kind": "modelled_age",
+   "definition": "modelled biological age",
+   "value_original": "108",
+   "unit_original": "years",
+   "qualifier": null,
+   "uncertainty": {
+    "label": "95.4% апостериорный интервал",
+    "kind": "posterior calibrated age probability range; midpoint +/- half-range",
+    "level_percent": 95.4,
+    "plus_minus": "16",
+    "lower": null,
+    "upper": null,
+    "upper_status": "not_reported"
+   },
+   "subject": {
+    "label": "female shark no.10; TL=327 cm",
+    "sex": "female",
+    "sample_size": "1",
+    "sample_size_scope": "individual; study 28 females"
+   },
+   "conditions": {
+    "setting": "wild",
+    "text": "wild; collected around Greenland 2010-2013"
+   },
+   "method": "Eye-lens radiocarbon; Marine13; constrained Bayesian model",
+   "publication_id": "nielsen2016",
+   "publication_label": "Nielsen 2016",
+   "author_notes": "Not mean lifespan or SD. A index=139.4% is author model diagnostic, not app quality score.",
+   "origin_kind": "own_result",
+   "evidence_ids": [
+    "shark-10-value"
+   ],
+   "context_evidence_ids": [
+    "shark-10-context"
+   ],
+   "related_measure_ids": [],
+   "review_status": "unreviewed",
+   "verification_status": "needs_review"
+  },
+  "evidence": {
+   "document_name": "shark-complete.pdf",
+   "document_version": 1,
+   "page": 21,
+   "printed": "Supplement p16 Table S2 row 10; TL 327 cm",
+   "context": "main PDF2-4; supplement S2 caption PDF21",
+   "doi": "10.1126/science.aaf1703"
+  }
+ },
+ {
+  "row": {
+   "id": "shark-11",
+   "number": 8,
+   "species_name_in_source": "Somniosus microcephalus",
+   "species_label": "Somniosus microcephalus",
+   "taxonomy_note": null,
+   "measure_kind": "modelled_age",
+   "definition": "modelled biological age",
+   "value_original": "110",
+   "unit_original": "years",
+   "qualifier": null,
+   "uncertainty": {
+    "label": "95.4% апостериорный интервал",
+    "kind": "posterior calibrated age probability range; midpoint +/- half-range",
+    "level_percent": 95.4,
+    "plus_minus": "18",
+    "lower": null,
+    "upper": null,
+    "upper_status": "not_reported"
+   },
+   "subject": {
+    "label": "female shark no.11; TL=330 cm",
+    "sex": "female",
+    "sample_size": "1",
+    "sample_size_scope": "individual; study 28 females"
+   },
+   "conditions": {
+    "setting": "wild",
+    "text": "wild; collected around Greenland 2010-2013"
+   },
+   "method": "Eye-lens radiocarbon; Marine13; constrained Bayesian model",
+   "publication_id": "nielsen2016",
+   "publication_label": "Nielsen 2016",
+   "author_notes": "Not mean lifespan or SD. A index=99.6% is author model diagnostic, not app quality score.",
+   "origin_kind": "own_result",
+   "evidence_ids": [
+    "shark-11-value"
+   ],
+   "context_evidence_ids": [
+    "shark-11-context"
+   ],
+   "related_measure_ids": [],
+   "review_status": "unreviewed",
+   "verification_status": "needs_review"
+  },
+  "evidence": {
+   "document_name": "shark-complete.pdf",
+   "document_version": 1,
+   "page": 21,
+   "printed": "Supplement p16 Table S2 row 11; TL 330 cm",
+   "context": "main PDF2-4; supplement S2 caption PDF21",
+   "doi": "10.1126/science.aaf1703"
+  }
+ },
+ {
+  "row": {
+   "id": "shark-12",
+   "number": 9,
+   "species_name_in_source": "Somniosus microcephalus",
+   "species_label": "Somniosus microcephalus",
+   "taxonomy_note": null,
+   "measure_kind": "modelled_age",
+   "definition": "modelled biological age",
+   "value_original": "113",
+   "unit_original": "years",
+   "qualifier": null,
+   "uncertainty": {
+    "label": "95.4% апостериорный интервал",
+    "kind": "posterior calibrated age probability range; midpoint +/- half-range",
+    "level_percent": 95.4,
+    "plus_minus": "17",
+    "lower": null,
+    "upper": null,
+    "upper_status": "not_reported"
+   },
+   "subject": {
+    "label": "female shark no.12; TL=336 cm",
+    "sex": "female",
+    "sample_size": "1",
+    "sample_size_scope": "individual; study 28 females"
+   },
+   "conditions": {
+    "setting": "wild",
+    "text": "wild; collected around Greenland 2010-2013"
+   },
+   "method": "Eye-lens radiocarbon; Marine13; constrained Bayesian model",
+   "publication_id": "nielsen2016",
+   "publication_label": "Nielsen 2016",
+   "author_notes": "Not mean lifespan or SD. A index=50.0% is author model diagnostic, not app quality score.",
+   "origin_kind": "own_result",
+   "evidence_ids": [
+    "shark-12-value"
+   ],
+   "context_evidence_ids": [
+    "shark-12-context"
+   ],
+   "related_measure_ids": [],
+   "review_status": "unreviewed",
+   "verification_status": "needs_review"
+  },
+  "evidence": {
+   "document_name": "shark-complete.pdf",
+   "document_version": 1,
+   "page": 21,
+   "printed": "Supplement p16 Table S2 row 12; TL 336 cm",
+   "context": "main PDF2-4; supplement S2 caption PDF21",
+   "doi": "10.1126/science.aaf1703"
+  }
+ },
+ {
+  "row": {
+   "id": "shark-13",
+   "number": 10,
+   "species_name_in_source": "Somniosus microcephalus",
+   "species_label": "Somniosus microcephalus",
+   "taxonomy_note": null,
+   "measure_kind": "modelled_age",
+   "definition": "modelled biological age",
+   "value_original": "126",
+   "unit_original": "years",
+   "qualifier": null,
+   "uncertainty": {
+    "label": "95.4% апостериорный интервал",
+    "kind": "posterior calibrated age probability range; midpoint +/- half-range",
+    "level_percent": 95.4,
+    "plus_minus": "19",
+    "lower": null,
+    "upper": null,
+    "upper_status": "not_reported"
+   },
+   "subject": {
+    "label": "female shark no.13; TL=354 cm",
+    "sex": "female",
+    "sample_size": "1",
+    "sample_size_scope": "individual; study 28 females"
+   },
+   "conditions": {
+    "setting": "wild",
+    "text": "wild; collected around Greenland 2010-2013"
+   },
+   "method": "Eye-lens radiocarbon; Marine13; constrained Bayesian model",
+   "publication_id": "nielsen2016",
+   "publication_label": "Nielsen 2016",
+   "author_notes": "Not mean lifespan or SD. A index=123.5% is author model diagnostic, not app quality score.",
+   "origin_kind": "own_result",
+   "evidence_ids": [
+    "shark-13-value"
+   ],
+   "context_evidence_ids": [
+    "shark-13-context"
+   ],
+   "related_measure_ids": [],
+   "review_status": "unreviewed",
+   "verification_status": "needs_review"
+  },
+  "evidence": {
+   "document_name": "shark-complete.pdf",
+   "document_version": 1,
+   "page": 21,
+   "printed": "Supplement p16 Table S2 row 13; TL 354 cm",
+   "context": "main PDF2-4; supplement S2 caption PDF21",
+   "doi": "10.1126/science.aaf1703"
+  }
+ },
+ {
+  "row": {
+   "id": "shark-14",
+   "number": 11,
+   "species_name_in_source": "Somniosus microcephalus",
+   "species_label": "Somniosus microcephalus",
+   "taxonomy_note": null,
+   "measure_kind": "modelled_age",
+   "definition": "modelled biological age",
+   "value_original": "126",
+   "unit_original": "years",
+   "qualifier": null,
+   "uncertainty": {
+    "label": "95.4% апостериорный интервал",
+    "kind": "posterior calibrated age probability range; midpoint +/- half-range",
+    "level_percent": 95.4,
+    "plus_minus": "19",
+    "lower": null,
+    "upper": null,
+    "upper_status": "not_reported"
+   },
+   "subject": {
+    "label": "female shark no.14; TL=354 cm",
+    "sex": "female",
+    "sample_size": "1",
+    "sample_size_scope": "individual; study 28 females"
+   },
+   "conditions": {
+    "setting": "wild",
+    "text": "wild; collected around Greenland 2010-2013"
+   },
+   "method": "Eye-lens radiocarbon; Marine13; constrained Bayesian model",
+   "publication_id": "nielsen2016",
+   "publication_label": "Nielsen 2016",
+   "author_notes": "Not mean lifespan or SD. A index=100.0% is author model diagnostic, not app quality score.",
+   "origin_kind": "own_result",
+   "evidence_ids": [
+    "shark-14-value"
+   ],
+   "context_evidence_ids": [
+    "shark-14-context"
+   ],
+   "related_measure_ids": [],
+   "review_status": "unreviewed",
+   "verification_status": "needs_review"
+  },
+  "evidence": {
+   "document_name": "shark-complete.pdf",
+   "document_version": 1,
+   "page": 21,
+   "printed": "Supplement p16 Table S2 row 14; TL 354 cm",
+   "context": "main PDF2-4; supplement S2 caption PDF21",
+   "doi": "10.1126/science.aaf1703"
+  }
+ },
+ {
+  "row": {
+   "id": "shark-15",
+   "number": 12,
+   "species_name_in_source": "Somniosus microcephalus",
+   "species_label": "Somniosus microcephalus",
+   "taxonomy_note": null,
+   "measure_kind": "modelled_age",
+   "definition": "modelled biological age",
+   "value_original": "126",
+   "unit_original": "years",
+   "qualifier": null,
+   "uncertainty": {
+    "label": "95.4% апостериорный интервал",
+    "kind": "posterior calibrated age probability range; midpoint +/- half-range",
+    "level_percent": 95.4,
+    "plus_minus": "19",
+    "lower": null,
+    "upper": null,
+    "upper_status": "not_reported"
+   },
+   "subject": {
+    "label": "female shark no.15; TL=355 cm",
+    "sex": "female",
+    "sample_size": "1",
+    "sample_size_scope": "individual; study 28 females"
+   },
+   "conditions": {
+    "setting": "wild",
+    "text": "wild; collected around Greenland 2010-2013"
+   },
+   "method": "Eye-lens radiocarbon; Marine13; constrained Bayesian model",
+   "publication_id": "nielsen2016",
+   "publication_label": "Nielsen 2016",
+   "author_notes": "Not mean lifespan or SD. A index=96.0% is author model diagnostic, not app quality score.",
+   "origin_kind": "own_result",
+   "evidence_ids": [
+    "shark-15-value"
+   ],
+   "context_evidence_ids": [
+    "shark-15-context"
+   ],
+   "related_measure_ids": [],
+   "review_status": "unreviewed",
+   "verification_status": "needs_review"
+  },
+  "evidence": {
+   "document_name": "shark-complete.pdf",
+   "document_version": 1,
+   "page": 21,
+   "printed": "Supplement p16 Table S2 row 15; TL 355 cm",
+   "context": "main PDF2-4; supplement S2 caption PDF21",
+   "doi": "10.1126/science.aaf1703"
+  }
+ },
+ {
+  "row": {
+   "id": "shark-16",
+   "number": 13,
+   "species_name_in_source": "Somniosus microcephalus",
+   "species_label": "Somniosus microcephalus",
+   "taxonomy_note": null,
+   "measure_kind": "modelled_age",
+   "definition": "modelled biological age",
+   "value_original": "137",
+   "unit_original": "years",
+   "qualifier": null,
+   "uncertainty": {
+    "label": "95.4% апостериорный интервал",
+    "kind": "posterior calibrated age probability range; midpoint +/- half-range",
+    "level_percent": 95.4,
+    "plus_minus": "20",
+    "lower": null,
+    "upper": null,
+    "upper_status": "not_reported"
+   },
+   "subject": {
+    "label": "female shark no.16; TL=370 cm",
+    "sex": "female",
+    "sample_size": "1",
+    "sample_size_scope": "individual; study 28 females"
+   },
+   "conditions": {
+    "setting": "wild",
+    "text": "wild; collected around Greenland 2010-2013"
+   },
+   "method": "Eye-lens radiocarbon; Marine13; constrained Bayesian model",
+   "publication_id": "nielsen2016",
+   "publication_label": "Nielsen 2016",
+   "author_notes": "Not mean lifespan or SD. A index=20.1% is author model diagnostic, not app quality score.",
+   "origin_kind": "own_result",
+   "evidence_ids": [
+    "shark-16-value"
+   ],
+   "context_evidence_ids": [
+    "shark-16-context"
+   ],
+   "related_measure_ids": [],
+   "review_status": "unreviewed",
+   "verification_status": "needs_review"
+  },
+  "evidence": {
+   "document_name": "shark-complete.pdf",
+   "document_version": 1,
+   "page": 21,
+   "printed": "Supplement p16 Table S2 row 16; TL 370 cm",
+   "context": "main PDF2-4; supplement S2 caption PDF21",
+   "doi": "10.1126/science.aaf1703"
+  }
+ },
+ {
+  "row": {
+   "id": "shark-17",
+   "number": 14,
+   "species_name_in_source": "Somniosus microcephalus",
+   "species_label": "Somniosus microcephalus",
+   "taxonomy_note": null,
+   "measure_kind": "modelled_age",
+   "definition": "modelled biological age",
+   "value_original": "150",
+   "unit_original": "years",
+   "qualifier": null,
+   "uncertainty": {
+    "label": "95.4% апостериорный интервал",
+    "kind": "posterior calibrated age probability range; midpoint +/- half-range",
+    "level_percent": 95.4,
+    "plus_minus": "22",
+    "lower": null,
+    "upper": null,
+    "upper_status": "not_reported"
+   },
+   "subject": {
+    "label": "female shark no.17; TL=386 cm",
+    "sex": "female",
+    "sample_size": "1",
+    "sample_size_scope": "individual; study 28 females"
+   },
+   "conditions": {
+    "setting": "wild",
+    "text": "wild; collected around Greenland 2010-2013"
+   },
+   "method": "Eye-lens radiocarbon; Marine13; constrained Bayesian model",
+   "publication_id": "nielsen2016",
+   "publication_label": "Nielsen 2016",
+   "author_notes": "Not mean lifespan or SD. A index=111.8% is author model diagnostic, not app quality score.",
+   "origin_kind": "own_result",
+   "evidence_ids": [
+    "shark-17-value"
+   ],
+   "context_evidence_ids": [
+    "shark-17-context"
+   ],
+   "related_measure_ids": [],
+   "review_status": "unreviewed",
+   "verification_status": "needs_review"
+  },
+  "evidence": {
+   "document_name": "shark-complete.pdf",
+   "document_version": 1,
+   "page": 21,
+   "printed": "Supplement p16 Table S2 row 17; TL 386 cm",
+   "context": "main PDF2-4; supplement S2 caption PDF21",
+   "doi": "10.1126/science.aaf1703"
+  }
+ },
+ {
+  "row": {
+   "id": "shark-18",
+   "number": 15,
+   "species_name_in_source": "Somniosus microcephalus",
+   "species_label": "Somniosus microcephalus",
+   "taxonomy_note": null,
+   "measure_kind": "modelled_age",
+   "definition": "modelled biological age",
+   "value_original": "155",
+   "unit_original": "years",
+   "qualifier": null,
+   "uncertainty": {
+    "label": "95.4% апостериорный интервал",
+    "kind": "posterior calibrated age probability range; midpoint +/- half-range",
+    "level_percent": 95.4,
+    "plus_minus": "23",
+    "lower": null,
+    "upper": null,
+    "upper_status": "not_reported"
+   },
+   "subject": {
+    "label": "female shark no.18; TL=390 cm",
+    "sex": "female",
+    "sample_size": "1",
+    "sample_size_scope": "individual; study 28 females"
+   },
+   "conditions": {
+    "setting": "wild",
+    "text": "wild; collected around Greenland 2010-2013"
+   },
+   "method": "Eye-lens radiocarbon; Marine13; constrained Bayesian model",
+   "publication_id": "nielsen2016",
+   "publication_label": "Nielsen 2016",
+   "author_notes": "Not mean lifespan or SD. A index=113.2% is author model diagnostic, not app quality score.",
+   "origin_kind": "own_result",
+   "evidence_ids": [
+    "shark-18-value"
+   ],
+   "context_evidence_ids": [
+    "shark-18-context"
+   ],
+   "related_measure_ids": [],
+   "review_status": "unreviewed",
+   "verification_status": "needs_review"
+  },
+  "evidence": {
+   "document_name": "shark-complete.pdf",
+   "document_version": 1,
+   "page": 21,
+   "printed": "Supplement p16 Table S2 row 18; TL 390 cm",
+   "context": "main PDF2-4; supplement S2 caption PDF21",
+   "doi": "10.1126/science.aaf1703"
+  }
+ },
+ {
+  "row": {
+   "id": "shark-19",
+   "number": 16,
+   "species_name_in_source": "Somniosus microcephalus",
+   "species_label": "Somniosus microcephalus",
+   "taxonomy_note": null,
+   "measure_kind": "modelled_age",
+   "definition": "modelled biological age",
+   "value_original": "156",
+   "unit_original": "years",
+   "qualifier": null,
+   "uncertainty": {
+    "label": "95.4% апостериорный интервал",
+    "kind": "posterior calibrated age probability range; midpoint +/- half-range",
+    "level_percent": 95.4,
+    "plus_minus": "22",
+    "lower": null,
+    "upper": null,
+    "upper_status": "not_reported"
+   },
+   "subject": {
+    "label": "female shark no.19; TL=392 cm",
+    "sex": "female",
+    "sample_size": "1",
+    "sample_size_scope": "individual; study 28 females"
+   },
+   "conditions": {
+    "setting": "wild",
+    "text": "wild; collected around Greenland 2010-2013"
+   },
+   "method": "Eye-lens radiocarbon; Marine13; constrained Bayesian model",
+   "publication_id": "nielsen2016",
+   "publication_label": "Nielsen 2016",
+   "author_notes": "Not mean lifespan or SD. A index=116.9% is author model diagnostic, not app quality score.",
+   "origin_kind": "own_result",
+   "evidence_ids": [
+    "shark-19-value"
+   ],
+   "context_evidence_ids": [
+    "shark-19-context"
+   ],
+   "related_measure_ids": [],
+   "review_status": "unreviewed",
+   "verification_status": "needs_review"
+  },
+  "evidence": {
+   "document_name": "shark-complete.pdf",
+   "document_version": 1,
+   "page": 21,
+   "printed": "Supplement p16 Table S2 row 19; TL 392 cm",
+   "context": "main PDF2-4; supplement S2 caption PDF21",
+   "doi": "10.1126/science.aaf1703"
+  }
+ },
+ {
+  "row": {
+   "id": "shark-20",
+   "number": 17,
+   "species_name_in_source": "Somniosus microcephalus",
+   "species_label": "Somniosus microcephalus",
+   "taxonomy_note": null,
+   "measure_kind": "modelled_age",
+   "definition": "modelled biological age",
+   "value_original": "185",
+   "unit_original": "years",
+   "qualifier": null,
+   "uncertainty": {
+    "label": "95.4% апостериорный интервал",
+    "kind": "posterior calibrated age probability range; midpoint +/- half-range",
+    "level_percent": 95.4,
+    "plus_minus": "26",
+    "lower": null,
+    "upper": null,
+    "upper_status": "not_reported"
+   },
+   "subject": {
+    "label": "female shark no.20; TL=420 cm",
+    "sex": "female",
+    "sample_size": "1",
+    "sample_size_scope": "individual; study 28 females"
+   },
+   "conditions": {
+    "setting": "wild",
+    "text": "wild; collected around Greenland 2010-2013"
+   },
+   "method": "Eye-lens radiocarbon; Marine13; constrained Bayesian model",
+   "publication_id": "nielsen2016",
+   "publication_label": "Nielsen 2016",
+   "author_notes": "Not mean lifespan or SD. A index=108.2% is author model diagnostic, not app quality score.",
+   "origin_kind": "own_result",
+   "evidence_ids": [
+    "shark-20-value"
+   ],
+   "context_evidence_ids": [
+    "shark-20-context"
+   ],
+   "related_measure_ids": [],
+   "review_status": "unreviewed",
+   "verification_status": "needs_review"
+  },
+  "evidence": {
+   "document_name": "shark-complete.pdf",
+   "document_version": 1,
+   "page": 21,
+   "printed": "Supplement p16 Table S2 row 20; TL 420 cm",
+   "context": "main PDF2-4; supplement S2 caption PDF21",
+   "doi": "10.1126/science.aaf1703"
+  }
+ },
+ {
+  "row": {
+   "id": "shark-21",
+   "number": 18,
+   "species_name_in_source": "Somniosus microcephalus",
+   "species_label": "Somniosus microcephalus",
+   "taxonomy_note": null,
+   "measure_kind": "modelled_age",
+   "definition": "modelled biological age",
+   "value_original": "212",
+   "unit_original": "years",
+   "qualifier": null,
+   "uncertainty": {
+    "label": "95.4% апостериорный интервал",
+    "kind": "posterior calibrated age probability range; midpoint +/- half-range",
+    "level_percent": 95.4,
+    "plus_minus": "31",
+    "lower": null,
+    "upper": null,
+    "upper_status": "not_reported"
+   },
+   "subject": {
+    "label": "female shark no.21; TL=440 cm",
+    "sex": "female",
+    "sample_size": "1",
+    "sample_size_scope": "individual; study 28 females"
+   },
+   "conditions": {
+    "setting": "wild",
+    "text": "wild; collected around Greenland 2010-2013"
+   },
+   "method": "Eye-lens radiocarbon; Marine13; constrained Bayesian model",
+   "publication_id": "nielsen2016",
+   "publication_label": "Nielsen 2016",
+   "author_notes": "Not mean lifespan or SD. A index=71.9% is author model diagnostic, not app quality score.",
+   "origin_kind": "own_result",
+   "evidence_ids": [
+    "shark-21-value"
+   ],
+   "context_evidence_ids": [
+    "shark-21-context"
+   ],
+   "related_measure_ids": [],
+   "review_status": "unreviewed",
+   "verification_status": "needs_review"
+  },
+  "evidence": {
+   "document_name": "shark-complete.pdf",
+   "document_version": 1,
+   "page": 21,
+   "printed": "Supplement p16 Table S2 row 21; TL 440 cm",
+   "context": "main PDF2-4; supplement S2 caption PDF21",
+   "doi": "10.1126/science.aaf1703"
+  }
+ },
+ {
+  "row": {
+   "id": "shark-22",
+   "number": 19,
+   "species_name_in_source": "Somniosus microcephalus",
+   "species_label": "Somniosus microcephalus",
+   "taxonomy_note": null,
+   "measure_kind": "modelled_age",
+   "definition": "modelled biological age",
+   "value_original": "215",
+   "unit_original": "years",
+   "qualifier": null,
+   "uncertainty": {
+    "label": "95.4% апостериорный интервал",
+    "kind": "posterior calibrated age probability range; midpoint +/- half-range",
+    "level_percent": 95.4,
+    "plus_minus": "33",
+    "lower": null,
+    "upper": null,
+    "upper_status": "not_reported"
+   },
+   "subject": {
+    "label": "female shark no.22; TL=442 cm",
+    "sex": "female",
+    "sample_size": "1",
+    "sample_size_scope": "individual; study 28 females"
+   },
+   "conditions": {
+    "setting": "wild",
+    "text": "wild; collected around Greenland 2010-2013"
+   },
+   "method": "Eye-lens radiocarbon; Marine13; constrained Bayesian model",
+   "publication_id": "nielsen2016",
+   "publication_label": "Nielsen 2016",
+   "author_notes": "Not mean lifespan or SD. A index=106.7% is author model diagnostic, not app quality score.",
+   "origin_kind": "own_result",
+   "evidence_ids": [
+    "shark-22-value"
+   ],
+   "context_evidence_ids": [
+    "shark-22-context"
+   ],
+   "related_measure_ids": [],
+   "review_status": "unreviewed",
+   "verification_status": "needs_review"
+  },
+  "evidence": {
+   "document_name": "shark-complete.pdf",
+   "document_version": 1,
+   "page": 21,
+   "printed": "Supplement p16 Table S2 row 22; TL 442 cm",
+   "context": "main PDF2-4; supplement S2 caption PDF21",
+   "doi": "10.1126/science.aaf1703"
+  }
+ },
+ {
+  "row": {
+   "id": "shark-23",
+   "number": 20,
+   "species_name_in_source": "Somniosus microcephalus",
+   "species_label": "Somniosus microcephalus",
+   "taxonomy_note": null,
+   "measure_kind": "modelled_age",
+   "definition": "modelled biological age",
+   "value_original": "220",
+   "unit_original": "years",
+   "qualifier": null,
+   "uncertainty": {
+    "label": "95.4% апостериорный интервал",
+    "kind": "posterior calibrated age probability range; midpoint +/- half-range",
+    "level_percent": 95.4,
+    "plus_minus": "33",
+    "lower": null,
+    "upper": null,
+    "upper_status": "not_reported"
+   },
+   "subject": {
+    "label": "female shark no.23; TL=445 cm",
+    "sex": "female",
+    "sample_size": "1",
+    "sample_size_scope": "individual; study 28 females"
+   },
+   "conditions": {
+    "setting": "wild",
+    "text": "wild; collected around Greenland 2010-2013"
+   },
+   "method": "Eye-lens radiocarbon; Marine13; constrained Bayesian model",
+   "publication_id": "nielsen2016",
+   "publication_label": "Nielsen 2016",
+   "author_notes": "Not mean lifespan or SD. A index=125.7% is author model diagnostic, not app quality score.",
+   "origin_kind": "own_result",
+   "evidence_ids": [
+    "shark-23-value"
+   ],
+   "context_evidence_ids": [
+    "shark-23-context"
+   ],
+   "related_measure_ids": [],
+   "review_status": "unreviewed",
+   "verification_status": "needs_review"
+  },
+  "evidence": {
+   "document_name": "shark-complete.pdf",
+   "document_version": 1,
+   "page": 21,
+   "printed": "Supplement p16 Table S2 row 23; TL 445 cm",
+   "context": "main PDF2-4; supplement S2 caption PDF21",
+   "doi": "10.1126/science.aaf1703"
+  }
+ },
+ {
+  "row": {
+   "id": "shark-24",
+   "number": 21,
+   "species_name_in_source": "Somniosus microcephalus",
+   "species_label": "Somniosus microcephalus",
+   "taxonomy_note": null,
+   "measure_kind": "modelled_age",
+   "definition": "modelled biological age",
+   "value_original": "223",
+   "unit_original": "years",
+   "qualifier": null,
+   "uncertainty": {
+    "label": "95.4% апостериорный интервал",
+    "kind": "posterior calibrated age probability range; midpoint +/- half-range",
+    "level_percent": 95.4,
+    "plus_minus": "33",
+    "lower": null,
+    "upper": null,
+    "upper_status": "not_reported"
+   },
+   "subject": {
+    "label": "female shark no.24; TL=447 cm",
+    "sex": "female",
+    "sample_size": "1",
+    "sample_size_scope": "individual; study 28 females"
+   },
+   "conditions": {
+    "setting": "wild",
+    "text": "wild; collected around Greenland 2010-2013"
+   },
+   "method": "Eye-lens radiocarbon; Marine13; constrained Bayesian model",
+   "publication_id": "nielsen2016",
+   "publication_label": "Nielsen 2016",
+   "author_notes": "Not mean lifespan or SD. A index=122.1% is author model diagnostic, not app quality score.",
+   "origin_kind": "own_result",
+   "evidence_ids": [
+    "shark-24-value"
+   ],
+   "context_evidence_ids": [
+    "shark-24-context"
+   ],
+   "related_measure_ids": [],
+   "review_status": "unreviewed",
+   "verification_status": "needs_review"
+  },
+  "evidence": {
+   "document_name": "shark-complete.pdf",
+   "document_version": 1,
+   "page": 21,
+   "printed": "Supplement p16 Table S2 row 24; TL 447 cm",
+   "context": "main PDF2-4; supplement S2 caption PDF21",
+   "doi": "10.1126/science.aaf1703"
+  }
+ },
+ {
+  "row": {
+   "id": "shark-25",
+   "number": 22,
+   "species_name_in_source": "Somniosus microcephalus",
+   "species_label": "Somniosus microcephalus",
+   "taxonomy_note": null,
+   "measure_kind": "modelled_age",
+   "definition": "modelled biological age",
+   "value_original": "229",
+   "unit_original": "years",
+   "qualifier": null,
+   "uncertainty": {
+    "label": "95.4% апостериорный интервал",
+    "kind": "posterior calibrated age probability range; midpoint +/- half-range",
+    "level_percent": 95.4,
+    "plus_minus": "33",
+    "lower": null,
+    "upper": null,
+    "upper_status": "not_reported"
+   },
+   "subject": {
+    "label": "female shark no.25; TL=451 cm",
+    "sex": "female",
+    "sample_size": "1",
+    "sample_size_scope": "individual; study 28 females"
+   },
+   "conditions": {
+    "setting": "wild",
+    "text": "wild; collected around Greenland 2010-2013"
+   },
+   "method": "Eye-lens radiocarbon; Marine13; constrained Bayesian model",
+   "publication_id": "nielsen2016",
+   "publication_label": "Nielsen 2016",
+   "author_notes": "Not mean lifespan or SD. A index=122.7% is author model diagnostic, not app quality score.",
+   "origin_kind": "own_result",
+   "evidence_ids": [
+    "shark-25-value"
+   ],
+   "context_evidence_ids": [
+    "shark-25-context"
+   ],
+   "related_measure_ids": [],
+   "review_status": "unreviewed",
+   "verification_status": "needs_review"
+  },
+  "evidence": {
+   "document_name": "shark-complete.pdf",
+   "document_version": 1,
+   "page": 21,
+   "printed": "Supplement p16 Table S2 row 25; TL 451 cm",
+   "context": "main PDF2-4; supplement S2 caption PDF21",
+   "doi": "10.1126/science.aaf1703"
+  }
+ },
+ {
+  "row": {
+   "id": "shark-26",
+   "number": 23,
+   "species_name_in_source": "Somniosus microcephalus",
+   "species_label": "Somniosus microcephalus",
+   "taxonomy_note": null,
+   "measure_kind": "modelled_age",
+   "definition": "modelled biological age",
+   "value_original": "245",
+   "unit_original": "years",
+   "qualifier": null,
+   "uncertainty": {
+    "label": "95.4% апостериорный интервал",
+    "kind": "posterior calibrated age probability range; midpoint +/- half-range",
+    "level_percent": 95.4,
+    "plus_minus": "38",
+    "lower": null,
+    "upper": null,
+    "upper_status": "not_reported"
+   },
+   "subject": {
+    "label": "female shark no.26; TL=460 cm",
+    "sex": "female",
+    "sample_size": "1",
+    "sample_size_scope": "individual; study 28 females"
+   },
+   "conditions": {
+    "setting": "wild",
+    "text": "wild; collected around Greenland 2010-2013"
+   },
+   "method": "Eye-lens radiocarbon; Marine13; constrained Bayesian model",
+   "publication_id": "nielsen2016",
+   "publication_label": "Nielsen 2016",
+   "author_notes": "Not mean lifespan or SD. A index=121.5% is author model diagnostic, not app quality score.",
+   "origin_kind": "own_result",
+   "evidence_ids": [
+    "shark-26-value"
+   ],
+   "context_evidence_ids": [
+    "shark-26-context"
+   ],
+   "related_measure_ids": [],
+   "review_status": "unreviewed",
+   "verification_status": "needs_review"
+  },
+  "evidence": {
+   "document_name": "shark-complete.pdf",
+   "document_version": 1,
+   "page": 21,
+   "printed": "Supplement p16 Table S2 row 26; TL 460 cm",
+   "context": "main PDF2-4; supplement S2 caption PDF21",
+   "doi": "10.1126/science.aaf1703"
+  }
+ },
+ {
+  "row": {
+   "id": "shark-27",
+   "number": 24,
+   "species_name_in_source": "Somniosus microcephalus",
+   "species_label": "Somniosus microcephalus",
+   "taxonomy_note": null,
+   "measure_kind": "modelled_age",
+   "definition": "modelled biological age",
+   "value_original": "335",
+   "unit_original": "years",
+   "qualifier": null,
+   "uncertainty": {
+    "label": "95.4% апостериорный интервал",
+    "kind": "posterior calibrated age probability range; midpoint +/- half-range",
+    "level_percent": 95.4,
+    "plus_minus": "75",
+    "lower": null,
+    "upper": null,
+    "upper_status": "not_reported"
+   },
+   "subject": {
+    "label": "female shark no.27; TL=493 cm",
+    "sex": "female",
+    "sample_size": "1",
+    "sample_size_scope": "individual; study 28 females"
+   },
+   "conditions": {
+    "setting": "wild",
+    "text": "wild; collected around Greenland 2010-2013"
+   },
+   "method": "Eye-lens radiocarbon; Marine13; constrained Bayesian model",
+   "publication_id": "nielsen2016",
+   "publication_label": "Nielsen 2016",
+   "author_notes": "Not mean lifespan or SD. A index=120.0% is author model diagnostic, not app quality score.",
+   "origin_kind": "own_result",
+   "evidence_ids": [
+    "shark-27-value"
+   ],
+   "context_evidence_ids": [
+    "shark-27-context"
+   ],
+   "related_measure_ids": [],
+   "review_status": "unreviewed",
+   "verification_status": "needs_review"
+  },
+  "evidence": {
+   "document_name": "shark-complete.pdf",
+   "document_version": 1,
+   "page": 21,
+   "printed": "Supplement p16 Table S2 row 27; TL 493 cm",
+   "context": "main PDF2-4; supplement S2 caption PDF21",
+   "doi": "10.1126/science.aaf1703"
+  }
+ },
+ {
+  "row": {
+   "id": "shark-28",
+   "number": 25,
+   "species_name_in_source": "Somniosus microcephalus",
+   "species_label": "Somniosus microcephalus",
+   "taxonomy_note": null,
+   "measure_kind": "modelled_age",
+   "definition": "modelled biological age",
+   "value_original": "392",
+   "unit_original": "years",
+   "qualifier": null,
+   "uncertainty": {
+    "label": "95.4% апостериорный интервал",
+    "kind": "posterior calibrated age probability range; midpoint +/- half-range",
+    "level_percent": 95.4,
+    "plus_minus": "120",
+    "lower": null,
+    "upper": null,
+    "upper_status": "not_reported"
+   },
+   "subject": {
+    "label": "female shark no.28; TL=502 cm",
+    "sex": "female",
+    "sample_size": "1",
+    "sample_size_scope": "individual; study 28 females"
+   },
+   "conditions": {
+    "setting": "wild",
+    "text": "wild; collected around Greenland 2010-2013"
+   },
+   "method": "Eye-lens radiocarbon; Marine13; constrained Bayesian model",
+   "publication_id": "nielsen2016",
+   "publication_label": "Nielsen 2016",
+   "author_notes": "Not mean lifespan or SD. A index=35.9% is author model diagnostic, not app quality score.",
+   "origin_kind": "own_result",
+   "evidence_ids": [
+    "shark-28-value"
+   ],
+   "context_evidence_ids": [
+    "shark-28-context"
+   ],
+   "related_measure_ids": [],
+   "review_status": "unreviewed",
+   "verification_status": "needs_review"
+  },
+  "evidence": {
+   "document_name": "shark-complete.pdf",
+   "document_version": 1,
+   "page": 21,
+   "printed": "Supplement p16 Table S2 row 28; TL 502 cm",
+   "context": "main PDF2-4; supplement S2 caption PDF21",
+   "doi": "10.1126/science.aaf1703"
+  }
+ },
+ {
+  "row": {
+   "id": "shark-3",
+   "number": 26,
+   "species_name_in_source": "Somniosus microcephalus",
+   "species_label": "Somniosus microcephalus",
+   "taxonomy_note": null,
+   "measure_kind": "other",
+   "definition": "assigned age at reference year",
+   "value_original": "50",
+   "unit_original": "years",
+   "qualifier": "approximately",
+   "uncertainty": null,
+   "subject": {
+    "label": "shark no.3; TL=220 cm",
+    "sex": "female",
+    "sample_size": "1",
+    "sample_size_scope": null
+   },
+   "conditions": {
+    "setting": "wild",
+    "text": "wild; reference year 2012"
+   },
+   "method": "radiocarbon bomb-pulse timing",
+   "publication_id": "nielsen2016",
+   "publication_label": "Nielsen 2016",
+   "author_notes": "Model anchor; not a posterior estimate from S2. Birth-year assumption 1963 +/-5 is separate from age uncertainty.",
+   "origin_kind": "own_result",
+   "evidence_ids": [
+    "shark-3-value"
+   ],
+   "context_evidence_ids": [],
+   "related_measure_ids": [],
+   "review_status": "unreviewed",
+   "verification_status": "needs_review"
+  },
+  "evidence": {
+   "document_name": "shark-complete.pdf",
+   "document_version": 1,
+   "page": 3,
+   "printed": "Science p703 main text; shark no.3",
+   "context": null,
+   "doi": "10.1126/science.aaf1703"
+  }
+ },
+ {
+  "row": {
+   "id": "shark-maturity",
+   "number": 27,
+   "species_name_in_source": "Somniosus microcephalus",
+   "species_label": "Somniosus microcephalus",
+   "taxonomy_note": null,
+   "measure_kind": "maturity_age",
+   "definition": "estimated age at sexual maturity",
+   "value_original": "156",
+   "unit_original": "years",
+   "qualifier": "at least",
+   "uncertainty": {
+    "label": "95.4% апостериорный интервал",
+    "kind": "95.4% posterior age range of reference individual",
+    "level_percent": 95.4,
+    "plus_minus": "22",
+    "lower": null,
+    "upper": null,
+    "upper_status": "not_reported"
+   },
+   "subject": {
+    "label": "females >400 cm; inference uses no.19 (392 cm)",
+    "sex": "female",
+    "sample_size": null,
+    "sample_size_scope": null
+   },
+   "conditions": {
+    "setting": "wild",
+    "text": "wild"
+   },
+   "method": "Eye-lens radiocarbon; Marine13; constrained Bayesian model",
+   "publication_id": "nielsen2016",
+   "publication_label": "Nielsen 2016",
+   "author_notes": "Author inference combines age model and cited maturity length; not observed age at reproduction.",
+   "origin_kind": "own_result",
+   "evidence_ids": [
+    "shark-maturity-value"
+   ],
+   "context_evidence_ids": [],
+   "related_measure_ids": [
+    "shark-19"
+   ],
+   "review_status": "unreviewed",
+   "verification_status": "needs_review"
+  },
+  "evidence": {
+   "document_name": "shark-complete.pdf",
+   "document_version": 1,
+   "page": 4,
+   "printed": "Science p704 main text; maturity interpretation",
+   "context": null,
+   "doi": "10.1126/science.aaf1703"
+  }
+ },
+ {
+  "row": {
+   "id": "shark-longevity-lower",
+   "number": 28,
+   "species_name_in_source": "Somniosus microcephalus",
+   "species_label": "Somniosus microcephalus",
+   "taxonomy_note": null,
+   "measure_kind": "other",
+   "definition": "estimated lifespan lower bound",
+   "value_original": "272",
+   "unit_original": "years",
+   "qualifier": "at least",
+   "uncertainty": null,
+   "subject": {
+    "label": "sharks exceeding 500 cm",
+    "sex": null,
+    "sample_size": null,
+    "sample_size_scope": null
+   },
+   "conditions": {
+    "setting": "wild",
+    "text": "wild"
+   },
+   "method": "Eye-lens radiocarbon; Marine13; constrained Bayesian model",
+   "publication_id": "nielsen2016",
+   "publication_label": "Nielsen 2016",
+   "author_notes": "Author-stated summary linked to same age evidence; not an independent observation or a newly calculated value.",
+   "origin_kind": "own_result",
+   "evidence_ids": [
+    "shark-longevity-lower-value"
+   ],
+   "context_evidence_ids": [],
+   "related_measure_ids": [
+    "shark-28"
+   ],
+   "review_status": "unreviewed",
+   "verification_status": "needs_review"
+  },
+  "evidence": {
+   "document_name": "shark-complete.pdf",
+   "document_version": 1,
+   "page": 4,
+   "printed": "Science p704 main text final discussion",
+   "context": null,
+   "doi": "10.1126/science.aaf1703"
+  }
+ },
+ {
+  "row": {
+   "id": "shark-small",
+   "number": 29,
+   "species_name_in_source": "Somniosus microcephalus",
+   "species_label": "Somniosus microcephalus",
+   "taxonomy_note": null,
+   "measure_kind": "other",
+   "definition": "age bound for small sharks",
+   "value_original": "100",
+   "unit_original": "years",
+   "qualifier": "younger than",
+   "uncertainty": null,
+   "subject": {
+    "label": "sharks <300 cm",
+    "sex": null,
+    "sample_size": null,
+    "sample_size_scope": null
+   },
+   "conditions": {
+    "setting": "wild",
+    "text": "wild"
+   },
+   "method": "Eye-lens radiocarbon; Marine13; constrained Bayesian model",
+   "publication_id": "nielsen2016",
+   "publication_label": "Nielsen 2016",
+   "author_notes": "Author summary of table; do not count as independent evidence.",
+   "origin_kind": "own_result",
+   "evidence_ids": [
+    "shark-small-value"
+   ],
+   "context_evidence_ids": [],
+   "related_measure_ids": [
+    "shark-4",
+    "shark-5",
+    "shark-6"
+   ],
+   "review_status": "unreviewed",
+   "verification_status": "needs_review"
+  },
+  "evidence": {
+   "document_name": "shark-complete.pdf",
+   "document_version": 1,
+   "page": 4,
+   "printed": "Science p704 main text; size subgroup",
+   "context": null,
+   "doi": "10.1126/science.aaf1703"
+  }
+ },
+ {
+  "row": {
+   "id": "ruby-last-death",
+   "number": 30,
+   "species_name_in_source": "Heterocephalus glaber",
+   "species_label": "Heterocephalus glaber",
+   "taxonomy_note": null,
+   "measure_kind": "observed_maximum",
+   "definition": "latest recorded death age",
+   "value_original": "6529",
+   "unit_original": "days",
+   "qualifier": null,
+   "uncertainty": null,
+   "subject": {
+    "label": "latest recorded death in analysed colony",
+    "sex": null,
+    "sample_size": "3299",
+    "sample_size_scope": "analysis population; not number dying at this age"
+   },
+   "conditions": {
+    "setting": "captive",
+    "text": "captivity"
+   },
+   "method": "colony records; survival analysis from age 183 days",
+   "publication_id": "ruby2018",
+   "publication_label": "Ruby 2018",
+   "author_notes": "Only 447 deaths in analysis; not maximum possible species lifespan; sex of this individual not stated here.",
+   "origin_kind": "own_result",
+   "evidence_ids": [
+    "ruby-last-death-value"
+   ],
+   "context_evidence_ids": [
+    "ruby-last-death-context"
+   ],
+   "related_measure_ids": [],
+   "review_status": "unreviewed",
+   "verification_status": "needs_review"
+  },
+  "evidence": {
+   "document_name": "ruby2018.pdf",
+   "document_version": 2,
+   "page": 3,
+   "printed": "Results first subsection paragraph 2",
+   "context": "PDF3 Results paragraph1",
+   "doi": "10.7554/eLife.31157"
+  }
+ },
+ {
+  "row": {
+   "id": "ruby-last-censor",
+   "number": 31,
+   "species_name_in_source": "Heterocephalus glaber",
+   "species_label": "Heterocephalus glaber",
+   "taxonomy_note": null,
+   "measure_kind": "other",
+   "definition": "age at last right-censoring",
+   "value_original": "11077",
+   "unit_original": "days",
+   "qualifier": null,
+   "uncertainty": null,
+   "subject": {
+    "label": "last censored individual",
+    "sex": null,
+    "sample_size": "3299",
+    "sample_size_scope": "analysis population"
+   },
+   "conditions": {
+    "setting": "captive",
+    "text": "captivity"
+   },
+   "method": "colony records; right-censoring",
+   "publication_id": "ruby2018",
+   "publication_label": "Ruby 2018",
+   "author_notes": "Also reported as 30.3 years; same result, not another independent row. Not age at death; censoring reason for this individual not specified here.",
+   "origin_kind": "own_result",
+   "evidence_ids": [
+    "ruby-last-censor-value"
+   ],
+   "context_evidence_ids": [],
+   "related_measure_ids": [],
+   "review_status": "unreviewed",
+   "verification_status": "needs_review"
+  },
+  "evidence": {
+   "document_name": "ruby2018.pdf",
+   "document_version": 2,
+   "page": 3,
+   "printed": "Results first subsection paragraph 2",
+   "context": null,
+   "doi": "10.7554/eLife.31157"
+  }
+ },
+ {
+  "row": {
+   "id": "ruby-model-median",
+   "number": 32,
+   "species_name_in_source": "Heterocephalus glaber",
+   "species_label": "Heterocephalus glaber",
+   "taxonomy_note": null,
+   "measure_kind": "median",
+   "definition": "model-implied median lifespan",
+   "value_original": "6900",
+   "unit_original": "days",
+   "qualifier": "approximately",
+   "uncertainty": null,
+   "subject": {
+    "label": "non-breeders",
+    "sex": null,
+    "sample_size": null,
+    "sample_size_scope": null
+   },
+   "conditions": {
+    "setting": "captive",
+    "text": "captivity"
+   },
+   "method": "constant daily hazard exponential-decay model",
+   "publication_id": "ruby2018",
+   "publication_label": "Ruby 2018",
+   "author_notes": "Authors also report 19 years; not observed median or new calculation. Based on hazard estimate about 1/10000/day; no interval given.",
+   "origin_kind": "own_result",
+   "evidence_ids": [
+    "ruby-model-median-value"
+   ],
+   "context_evidence_ids": [],
+   "related_measure_ids": [],
+   "review_status": "unreviewed",
+   "verification_status": "needs_review"
+  },
+  "evidence": {
+   "document_name": "ruby2018.pdf",
+   "document_version": 2,
+   "page": 11,
+   "printed": "Discussion paragraph beginning Indeed",
+   "context": null,
+   "doi": "10.7554/eLife.31157"
+  }
+ },
+ {
+  "row": {
+   "id": "elephant-zoo",
+   "number": 33,
+   "species_name_in_source": "Loxodonta africana",
+   "species_label": "Loxodonta africana",
+   "taxonomy_note": null,
+   "measure_kind": "median",
+   "definition": "median lifespan",
+   "value_original": "16.9",
+   "unit_original": "years",
+   "qualifier": null,
+   "uncertainty": {
+    "label": "95% ДИ",
+    "kind": "confidence interval",
+    "level_percent": 95.0,
+    "plus_minus": null,
+    "lower": "16.4",
+    "upper": null,
+    "upper_status": "not_reached"
+   },
+   "subject": {
+    "label": "zoo-born females",
+    "sex": "female",
+    "sample_size": null,
+    "sample_size_scope": null
+   },
+   "conditions": {
+    "setting": "captive",
+    "text": "European zoos"
+   },
+   "method": "survivorship analysis; see supporting methods",
+   "publication_id": "clubb2008",
+   "publication_label": "Clubb 2008",
+   "author_notes": "Premature/stillbirths excluded. Exact subgroup n not stated for this median; 302 is all zoo African females, not zoo-born subgroup n; 1089 is Amboseli reference population.",
+   "origin_kind": "own_result",
+   "evidence_ids": [
+    "elephant-zoo-value"
+   ],
+   "context_evidence_ids": [
+    "elephant-zoo-context"
+   ],
+   "related_measure_ids": [],
+   "review_status": "unreviewed",
+   "verification_status": "needs_review"
+  },
+  "evidence": {
+   "document_name": "elephant-published.pdf",
+   "document_version": 1,
+   "page": 1,
+   "printed": "Science p1649 paragraph beginning For African elephants",
+   "context": "PDF3 supporting methods lines4-15",
+   "doi": "10.1126/science.1164298"
+  }
+ },
+ {
+  "row": {
+   "id": "elephant-natural",
+   "number": 34,
+   "species_name_in_source": "Loxodonta africana",
+   "species_label": "Loxodonta africana",
+   "taxonomy_note": null,
+   "measure_kind": "median",
+   "definition": "median lifespan",
+   "value_original": "56.0",
+   "unit_original": "years",
+   "qualifier": null,
+   "uncertainty": {
+    "label": "95% ДИ",
+    "kind": "confidence interval",
+    "level_percent": 95.0,
+    "plus_minus": null,
+    "lower": "51.5",
+    "upper": null,
+    "upper_status": "not_reached"
+   },
+   "subject": {
+    "label": "Amboseli females",
+    "sex": "female",
+    "sample_size": null,
+    "sample_size_scope": null
+   },
+   "conditions": {
+    "setting": "wild",
+    "text": "wild; human-caused deaths censored"
+   },
+   "method": "survivorship analysis; see supporting methods",
+   "publication_id": "clubb2008",
+   "publication_label": "Clubb 2008",
+   "author_notes": "Premature/stillbirths excluded. Exact subgroup n not stated for this median; 302 is all zoo African females, not zoo-born subgroup n; 1089 is Amboseli reference population.",
+   "origin_kind": "own_result",
+   "evidence_ids": [
+    "elephant-natural-value"
+   ],
+   "context_evidence_ids": [
+    "elephant-natural-context"
+   ],
+   "related_measure_ids": [],
+   "review_status": "unreviewed",
+   "verification_status": "needs_review"
+  },
+  "evidence": {
+   "document_name": "elephant-published.pdf",
+   "document_version": 1,
+   "page": 1,
+   "printed": "Science p1649 paragraph beginning For African elephants",
+   "context": "PDF3 supporting methods lines4-15",
+   "doi": "10.1126/science.1164298"
+  }
+ },
+ {
+  "row": {
+   "id": "elephant-all",
+   "number": 35,
+   "species_name_in_source": "Loxodonta africana",
+   "species_label": "Loxodonta africana",
+   "taxonomy_note": null,
+   "measure_kind": "median",
+   "definition": "median lifespan",
+   "value_original": "35.9",
+   "unit_original": "years",
+   "qualifier": null,
+   "uncertainty": {
+    "label": "95% ДИ",
+    "kind": "confidence interval",
+    "level_percent": 95.0,
+    "plus_minus": null,
+    "lower": "33.8",
+    "upper": "40.3",
+    "upper_status": "reported"
+   },
+   "subject": {
+    "label": "Amboseli females",
+    "sex": "female",
+    "sample_size": null,
+    "sample_size_scope": null
+   },
+   "conditions": {
+    "setting": "wild",
+    "text": "wild; human-caused deaths included"
+   },
+   "method": "survivorship analysis; see supporting methods",
+   "publication_id": "clubb2008",
+   "publication_label": "Clubb 2008",
+   "author_notes": "Premature/stillbirths excluded. Exact subgroup n not stated for this median; 302 is all zoo African females, not zoo-born subgroup n; 1089 is Amboseli reference population.",
+   "origin_kind": "own_result",
+   "evidence_ids": [
+    "elephant-all-value"
+   ],
+   "context_evidence_ids": [
+    "elephant-all-context"
+   ],
+   "related_measure_ids": [],
+   "review_status": "unreviewed",
+   "verification_status": "needs_review"
+  },
+  "evidence": {
+   "document_name": "elephant-published.pdf",
+   "document_version": 1,
+   "page": 1,
+   "printed": "Science p1649 paragraph beginning For African elephants",
+   "context": "PDF3 supporting methods lines4-15",
+   "doi": "10.1126/science.1164298"
+  }
+ },
+ {
+  "row": {
+   "id": "bat-41",
+   "number": 36,
+   "species_name_in_source": "Myotis brandtii",
+   "species_label": "Myotis brandtii",
+   "taxonomy_note": "Историческое название из публикации; современная таксономическая принадлежность этой особи не проверена.",
+   "measure_kind": "survival_interval",
+   "definition": "elapsed time from banding to live recapture; field longevity record",
+   "value_original": "41",
+   "unit_original": "years",
+   "qualifier": "minimum demonstrated survival interval; age at initial banding not specified",
+   "uncertainty": null,
+   "subject": {
+    "label": "record male recaptured during hibernation",
+    "sex": "male",
+    "sample_size": "1",
+    "sample_size_scope": "record individual; original banded population 1544 of both sexes"
+   },
+   "conditions": {
+    "setting": "wild",
+    "text": "wild; cave colonies in Biryusa karst, Siberia, Russia"
+   },
+   "method": "banding and subsequent live recapture",
+   "publication_id": "podlutsky2005",
+   "publication_label": "Podlutsky 2005",
+   "author_notes": "Not known birth-to-death lifespan or mean. Same bat previously reported at 38 years, recaptured three years later; not independent records. Table1 modified from reference3; no expeditions 1990-2000. Preserve historical species name; modern taxonomic assignment of this individual unverified.",
+   "origin_kind": "own_result",
+   "evidence_ids": [
+    "bat-41-value"
+   ],
+   "context_evidence_ids": [
+    "bat-41-context"
+   ],
+   "related_measure_ids": [],
+   "review_status": "unreviewed",
+   "verification_status": "needs_review"
+  },
+  "evidence": {
+   "document_name": "podlutsky2005.pdf",
+   "document_version": 1,
+   "page": 1,
+   "printed": "p1366 opening paragraph; Table 1 p1367 (PDF2), age 41 / No. alive 1",
+   "context": "PDF1 paragraphs 2-3; PDF2 Table1 title and note",
+   "doi": "10.1093/gerona/60.11.1366"
+  }
+ }
+]

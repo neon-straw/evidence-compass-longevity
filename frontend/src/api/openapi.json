@@ -1,0 +1,5770 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Evidence Compass",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/api/health": {
+      "get": {
+        "summary": "Get Health",
+        "operationId": "getHealth",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/session": {
+      "post": {
+        "summary": "Sign In",
+        "operationId": "signIn",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Credentials"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SessionResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Неверный логин или пароль"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "summary": "Get Session",
+        "operationId": "getSession",
+        "parameters": [
+          {
+            "name": "ec_session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Ec Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SessionResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Требуется вход"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Sign Out",
+        "operationId": "signOut",
+        "parameters": [
+          {
+            "name": "ec_session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Ec Session"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/study": {
+      "get": {
+        "summary": "Get Study",
+        "operationId": "getStudy",
+        "parameters": [
+          {
+            "name": "ec_session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Ec Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Study"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Clear Study Data",
+        "description": "Удаляет все данные исследований и файлы документов.",
+        "operationId": "clearStudyData",
+        "parameters": [
+          {
+            "name": "ec_session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Ec Session"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/question": {
+      "get": {
+        "summary": "Get Question",
+        "operationId": "getQuestion",
+        "parameters": [
+          {
+            "name": "ec_session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Ec Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QuestionDraft"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Save Question",
+        "operationId": "saveQuestion",
+        "parameters": [
+          {
+            "name": "ec_session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Ec Session"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QuestionText"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QuestionDraft"
+                }
+              }
+            }
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationInProgress"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/question/versions": {
+      "get": {
+        "summary": "List Question Versions",
+        "operationId": "listQuestionVersions",
+        "parameters": [
+          {
+            "name": "ec_session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Ec Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/QuestionVersion"
+                  },
+                  "title": "Response Listquestionversions"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/question/prepare-criteria": {
+      "post": {
+        "summary": "Prepare Criteria",
+        "description": "Ставит подготовку предложений в общий слот; готовность видна в `GET /criteria`.",
+        "operationId": "prepareCriteria",
+        "parameters": [
+          {
+            "name": "ec_session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Ec Session"
+            }
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CriteriaDraft"
+                }
+              }
+            }
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnsupportedQuestion"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceProblem"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationInProgress"
+                }
+              }
+            },
+            "description": "Conflict"
+          }
+        }
+      }
+    },
+    "/api/criteria/start-manually": {
+      "post": {
+        "summary": "Start Criteria Manually",
+        "description": "Переход к ручному заполнению, если подготовка предложений не удалась.",
+        "operationId": "startCriteriaManually",
+        "parameters": [
+          {
+            "name": "ec_session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Ec Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CriteriaDraft"
+                }
+              }
+            }
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnsupportedQuestion"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationInProgress"
+                }
+              }
+            },
+            "description": "Conflict"
+          }
+        }
+      }
+    },
+    "/api/criteria": {
+      "get": {
+        "summary": "Get Criteria",
+        "operationId": "getCriteria",
+        "parameters": [
+          {
+            "name": "ec_session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Ec Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CriteriaDraft"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Save Criteria",
+        "operationId": "saveCriteria",
+        "parameters": [
+          {
+            "name": "ec_session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Ec Session"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CriteriaFields"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CriteriaDraft"
+                }
+              }
+            }
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationInProgress"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/criteria/reformulate": {
+      "post": {
+        "summary": "Reformulate Criteria",
+        "description": "Новая редакция по вопросу; черновик меняется, только если пользователь её применит.",
+        "operationId": "reformulateCriteria",
+        "parameters": [
+          {
+            "name": "ec_session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Ec Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CriteriaProposal"
+                }
+              }
+            }
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceProblem"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OperationInProgress"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/criteria/confirm": {
+      "post": {
+        "summary": "Confirm Criteria",
+        "operationId": "confirmCriteria",
+        "parameters": [
+          {
+            "name": "ec_session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Ec Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CriteriaVersion"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Подтверждение заблокировано",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CriteriaDraft"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/search": {
+      "get": {
+        "summary": "Get Search",
+        "description": "Последний запуск по последней подтверждённой версии критериев или его запросы до запуска.",
+        "operationId": "getSearch",
+        "parameters": [
+          {
+            "name": "ec_session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Ec Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SearchRun"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/search/start": {
+      "post": {
+        "summary": "Start Search",
+        "description": "Запуск и повтор поиска по последней подтверждённой версии критериев.\n\nКаждый запуск — новый; прежний остаётся связанным со своей версией критериев.",
+        "operationId": "startSearch",
+        "parameters": [
+          {
+            "name": "ec_session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Ec Session"
+            }
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SearchRun"
+                }
+              }
+            }
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SearchRefused"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/search/stop": {
+      "post": {
+        "summary": "Stop Search",
+        "description": "Останавливает незавершённый запуск; полученные исходы источников сохраняются.",
+        "operationId": "stopSearch",
+        "parameters": [
+          {
+            "name": "ec_session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Ec Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SearchRun"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/selection": {
+      "get": {
+        "summary": "Get Selection",
+        "description": "Записи последнего завершённого поиска и добавленные вручную, без скрытия за лимитом.",
+        "operationId": "getSelection",
+        "parameters": [
+          {
+            "name": "ec_session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Ec Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Selection"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/publications/{publication_id}": {
+      "get": {
+        "summary": "Get Publication",
+        "operationId": "getPublication",
+        "parameters": [
+          {
+            "name": "publication_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Publication Id"
+            }
+          },
+          {
+            "name": "ec_session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Ec Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicationCard"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/publications/{publication_id}/decision": {
+      "put": {
+        "summary": "Change Decision",
+        "description": "Решение пользователя сохраняется с причиной и версией критериев; прежние — история.",
+        "operationId": "changeDecision",
+        "parameters": [
+          {
+            "name": "publication_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Publication Id"
+            }
+          },
+          {
+            "name": "ec_session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Ec Session"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DecisionChange"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicationCard"
+                }
+              }
+            }
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/Problem"
+                    },
+                    {
+                      "$ref": "#/components/schemas/OperationInProgress"
+                    }
+                  ],
+                  "title": "Response 409 Changedecision"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/publications/{publication_id}/selected": {
+      "put": {
+        "summary": "Change Selected",
+        "description": "Выбор записи, ждущей решения, включает её от имени пользователя; максимум восемь.",
+        "operationId": "changeSelected",
+        "parameters": [
+          {
+            "name": "publication_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Publication Id"
+            }
+          },
+          {
+            "name": "ec_session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Ec Session"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SelectionChange"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Selection"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Лимит выбора, недопустимая работа или занятый слот",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/Problem"
+                    },
+                    {
+                      "$ref": "#/components/schemas/OperationInProgress"
+                    }
+                  ],
+                  "title": "Response 409 Changeselected"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/publications/{publication_id}/version-links": {
+      "post": {
+        "summary": "Resolve Version Link",
+        "description": "Связь версий устанавливается или отклоняется только решением пользователя.",
+        "operationId": "resolveVersionLink",
+        "parameters": [
+          {
+            "name": "publication_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Publication Id"
+            }
+          },
+          {
+            "name": "ec_session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Ec Session"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VersionLinkChange"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicationCard"
+                }
+              }
+            }
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/Problem"
+                    },
+                    {
+                      "$ref": "#/components/schemas/OperationInProgress"
+                    }
+                  ],
+                  "title": "Response 409 Resolveversionlink"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/publications/lookup": {
+      "post": {
+        "summary": "Lookup Publication",
+        "operationId": "lookupPublication",
+        "parameters": [
+          {
+            "name": "ec_session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Ec Session"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LookupQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LookupCandidate"
+                  },
+                  "title": "Response Lookuppublication"
+                }
+              }
+            }
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceProblem"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/publications/manual": {
+      "post": {
+        "summary": "Add Publication Manually",
+        "description": "Запись с постоянной меткой «Добавлено вручную»; ждёт решения о соответствии.",
+        "operationId": "addPublicationManually",
+        "parameters": [
+          {
+            "name": "ec_session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Ec Session"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ManualAddition"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicationRow"
+                }
+              }
+            }
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/Problem"
+                    },
+                    {
+                      "$ref": "#/components/schemas/OperationInProgress"
+                    }
+                  ],
+                  "title": "Response 409 Addpublicationmanually"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceProblem"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/selection/proceed": {
+      "post": {
+        "summary": "Proceed To Documents",
+        "operationId": "proceedToDocuments",
+        "parameters": [
+          {
+            "name": "ec_session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Ec Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProceedResult"
+                }
+              }
+            }
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/extraction": {
+      "get": {
+        "summary": "Get Extraction",
+        "description": "Документы выбранных работ; работа без полного текста остаётся в таблице (AC04).",
+        "operationId": "getExtraction",
+        "parameters": [
+          {
+            "name": "ec_session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Ec Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Extraction"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/documents/{document_id}/retry-fetch": {
+      "post": {
+        "summary": "Retry Document Fetch",
+        "description": "Новая попытка получения; успешная создаёт новую версию, прежние сохраняются.",
+        "operationId": "retryDocumentFetch",
+        "parameters": [
+          {
+            "name": "document_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Document Id"
+            }
+          },
+          {
+            "name": "ec_session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Ec Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DocumentRow"
+                }
+              }
+            }
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/Problem"
+                    },
+                    {
+                      "$ref": "#/components/schemas/OperationInProgress"
+                    }
+                  ],
+                  "title": "Response 409 Retrydocumentfetch"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/documents/{document_id}/upload": {
+      "post": {
+        "summary": "Upload Document",
+        "description": "Ручная загрузка создаёт новую версию документа.",
+        "operationId": "uploadDocument",
+        "parameters": [
+          {
+            "name": "document_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Document Id"
+            }
+          },
+          {
+            "name": "ec_session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Ec Session"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_uploadDocument"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DocumentRow"
+                }
+              }
+            }
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/Problem"
+                    },
+                    {
+                      "$ref": "#/components/schemas/OperationInProgress"
+                    }
+                  ],
+                  "title": "Response 409 Uploaddocument"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "413": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            },
+            "description": "Content Too Large"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/publications/{publication_id}/supplements": {
+      "post": {
+        "summary": "Add Supplement",
+        "description": "Приложение, которого система не нашла: новый документ работы, загруженный вручную.",
+        "operationId": "addSupplement",
+        "parameters": [
+          {
+            "name": "publication_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Publication Id"
+            }
+          },
+          {
+            "name": "ec_session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Ec Session"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_addSupplement"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DocumentRow"
+                }
+              }
+            }
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/Problem"
+                    },
+                    {
+                      "$ref": "#/components/schemas/OperationInProgress"
+                    }
+                  ],
+                  "title": "Response 409 Addsupplement"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "413": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            },
+            "description": "Content Too Large"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/documents/{document_id}/identity": {
+      "post": {
+        "summary": "Decide Document Identity",
+        "description": "Решение пользователя: несовпадение не даёт использовать документ (AC05).",
+        "operationId": "decideDocumentIdentity",
+        "parameters": [
+          {
+            "name": "document_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Document Id"
+            }
+          },
+          {
+            "name": "ec_session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Ec Session"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IdentityDecision"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DocumentRow"
+                }
+              }
+            }
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/Problem"
+                    },
+                    {
+                      "$ref": "#/components/schemas/OperationInProgress"
+                    }
+                  ],
+                  "title": "Response 409 Decidedocumentidentity"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/extraction/start": {
+      "post": {
+        "summary": "Start Extraction",
+        "description": "Запуск и дозапуск необработанных работ. Повтор с тем же ключом и входом возвращает ту же\nоперацию; тот же ключ с другим входом — конфликт.",
+        "operationId": "startExtraction",
+        "parameters": [
+          {
+            "name": "idempotency-key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200,
+              "title": "Idempotency-Key"
+            }
+          },
+          {
+            "name": "ec_session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Ec Session"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StartExtraction"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Operation"
+                }
+              }
+            }
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/Problem"
+                    },
+                    {
+                      "$ref": "#/components/schemas/OperationInProgress"
+                    }
+                  ],
+                  "title": "Response 409 Startextraction"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/extraction/pause": {
+      "post": {
+        "summary": "Pause Extraction",
+        "description": "Пауза подтверждается на границе между работами; текущая работа завершается.",
+        "operationId": "pauseExtraction",
+        "parameters": [
+          {
+            "name": "ec_session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Ec Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Operation"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/extraction/resume": {
+      "post": {
+        "summary": "Resume Extraction",
+        "operationId": "resumeExtraction",
+        "parameters": [
+          {
+            "name": "ec_session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Ec Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Operation"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/extraction/stop": {
+      "post": {
+        "summary": "Stop Extraction",
+        "description": "Остановка подтверждается на границе между работами; готовые итоги сохраняются.",
+        "operationId": "stopExtraction",
+        "parameters": [
+          {
+            "name": "ec_session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Ec Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Operation"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/extraction/retry-failed": {
+      "post": {
+        "summary": "Retry Failed Extraction",
+        "description": "Повтор только неудачных работ; готовые результаты и правки не затрагиваются.",
+        "operationId": "retryFailedExtraction",
+        "parameters": [
+          {
+            "name": "ec_session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Ec Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Operation"
+                }
+              }
+            }
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/Problem"
+                    },
+                    {
+                      "$ref": "#/components/schemas/OperationInProgress"
+                    }
+                  ],
+                  "title": "Response 409 Retryfailedextraction"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/extraction/log": {
+      "get": {
+        "summary": "Get Extraction Log",
+        "operationId": "getExtractionLog",
+        "parameters": [
+          {
+            "name": "ec_session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Ec Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LogEvent"
+                  },
+                  "title": "Response Getextractionlog"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/documents/{document_id}/versions/{number}/file": {
+      "get": {
+        "summary": "Get Document Version File",
+        "description": "Файл конкретной версии документа. PDF открывается в браузере; остальное скачивается:\nфайл из внешнего источника не исполняется на странице приложения.",
+        "operationId": "getDocumentVersionFile",
+        "parameters": [
+          {
+            "name": "document_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Document Id"
+            }
+          },
+          {
+            "name": "number",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Number"
+            }
+          },
+          {
+            "name": "ec_session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Ec Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/octet-stream": {}
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/result": {
+      "get": {
+        "summary": "Get Result",
+        "description": "Текущая ревизия справки: закреплённые версии строк и карточек, охват и краткий вывод.",
+        "operationId": "getResult",
+        "parameters": [
+          {
+            "name": "ec_session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Ec Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/measures/{measure_id}/evidence": {
+      "get": {
+        "summary": "Get Measure Evidence",
+        "description": "Все основания строки: значения и контекста; потеря дополнительных оснований недопустима.",
+        "operationId": "getMeasureEvidence",
+        "parameters": [
+          {
+            "name": "measure_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Measure Id"
+            }
+          },
+          {
+            "name": "ec_session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Ec Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Evidence"
+                  },
+                  "title": "Response Getmeasureevidence"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/measures/{measure_id}/review": {
+      "post": {
+        "summary": "Review Measure",
+        "operationId": "reviewMeasure",
+        "parameters": [
+          {
+            "name": "measure_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Measure Id"
+            }
+          },
+          {
+            "name": "ec_session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Ec Session"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MeasureReview"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeasureRow"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/measures/{measure_id}/correction": {
+      "post": {
+        "summary": "Correct Measure",
+        "description": "Правка сохраняет историю и делает зависимый краткий вывод устаревшим.",
+        "operationId": "correctMeasure",
+        "parameters": [
+          {
+            "name": "measure_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Measure Id"
+            }
+          },
+          {
+            "name": "ec_session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Ec Session"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MeasureCorrection"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeasureRow"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Строка изменена параллельно",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/result/refresh": {
+      "post": {
+        "summary": "Refresh Result",
+        "description": "Явное обновление справки с учётом сохранённых правок.",
+        "operationId": "refreshResult",
+        "parameters": [
+          {
+            "name": "ec_session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Ec Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/result/export": {
+      "get": {
+        "summary": "Export Result",
+        "description": "CSV именно указанной ревизии таблицы, не библиографического списка.",
+        "operationId": "exportResult",
+        "parameters": [
+          {
+            "name": "revision",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Revision"
+            }
+          },
+          {
+            "name": "ec_session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Ec Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/csv": {}
+            }
+          },
+          "409": {
+            "description": "Ревизия больше не текущая",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Body_addSupplement": {
+        "properties": {
+          "file": {
+            "type": "string",
+            "contentMediaType": "application/octet-stream",
+            "title": "File"
+          }
+        },
+        "type": "object",
+        "required": [
+          "file"
+        ],
+        "title": "Body_addSupplement"
+      },
+      "Body_uploadDocument": {
+        "properties": {
+          "file": {
+            "type": "string",
+            "contentMediaType": "application/octet-stream",
+            "title": "File"
+          }
+        },
+        "type": "object",
+        "required": [
+          "file"
+        ],
+        "title": "Body_uploadDocument"
+      },
+      "Conditions": {
+        "properties": {
+          "setting": {
+            "type": "string",
+            "enum": [
+              "wild",
+              "captive",
+              "unknown"
+            ],
+            "title": "Setting"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          }
+        },
+        "type": "object",
+        "required": [
+          "setting",
+          "text"
+        ],
+        "title": "Conditions"
+      },
+      "Coverage": {
+        "properties": {
+          "found": {
+            "type": "integer",
+            "title": "Found"
+          },
+          "selected": {
+            "type": "integer",
+            "title": "Selected"
+          },
+          "full_texts": {
+            "type": "integer",
+            "title": "Full Texts"
+          },
+          "unavailable": {
+            "type": "integer",
+            "title": "Unavailable"
+          },
+          "not_processed": {
+            "type": "integer",
+            "title": "Not Processed"
+          },
+          "share": {
+            "type": "number",
+            "title": "Share"
+          },
+          "works": {
+            "items": {
+              "$ref": "#/components/schemas/CoverageWork"
+            },
+            "type": "array",
+            "title": "Works"
+          }
+        },
+        "type": "object",
+        "required": [
+          "found",
+          "selected",
+          "full_texts",
+          "unavailable",
+          "not_processed",
+          "share",
+          "works"
+        ],
+        "title": "Coverage"
+      },
+      "CoverageWork": {
+        "properties": {
+          "publication_id": {
+            "type": "string",
+            "title": "Publication Id"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "outcome": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "measures_extracted",
+                  "no_measures",
+                  "unresolved",
+                  "unavailable",
+                  "error"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Outcome"
+          },
+          "measure_count": {
+            "type": "integer",
+            "title": "Measure Count"
+          },
+          "reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reason"
+          }
+        },
+        "type": "object",
+        "required": [
+          "publication_id",
+          "label",
+          "outcome",
+          "measure_count",
+          "reason"
+        ],
+        "title": "CoverageWork"
+      },
+      "Credentials": {
+        "properties": {
+          "login": {
+            "type": "string",
+            "title": "Login"
+          },
+          "password": {
+            "type": "string",
+            "title": "Password"
+          }
+        },
+        "type": "object",
+        "required": [
+          "login",
+          "password"
+        ],
+        "title": "Credentials"
+      },
+      "CriteriaDraft": {
+        "properties": {
+          "objects": {
+            "items": {
+              "$ref": "#/components/schemas/StudyObject"
+            },
+            "type": "array",
+            "title": "Objects"
+          },
+          "period": {
+            "$ref": "#/components/schemas/YearRange"
+          },
+          "article_types": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "primary_study",
+                "review",
+                "meta_analysis",
+                "other"
+              ]
+            },
+            "type": "array",
+            "title": "Article Types"
+          },
+          "publication_kinds": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "journal_article",
+                "preprint",
+                "other"
+              ]
+            },
+            "type": "array",
+            "title": "Publication Kinds"
+          },
+          "conditions": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "wild",
+                "captive"
+              ]
+            },
+            "type": "array",
+            "title": "Conditions"
+          },
+          "search_criteria": {
+            "items": {
+              "$ref": "#/components/schemas/SearchCriterion"
+            },
+            "type": "array",
+            "title": "Search Criteria"
+          },
+          "resources": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "pubmed",
+                "europe_pmc"
+              ]
+            },
+            "type": "array",
+            "title": "Resources"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "preparing",
+              "ready",
+              "partial",
+              "failed"
+            ],
+            "title": "Status"
+          },
+          "gaps": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Gaps"
+          },
+          "problems": {
+            "items": {
+              "$ref": "#/components/schemas/Problem"
+            },
+            "type": "array",
+            "title": "Problems"
+          },
+          "confirmed_version": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Confirmed Version"
+          },
+          "has_unconfirmed_changes": {
+            "type": "boolean",
+            "title": "Has Unconfirmed Changes"
+          },
+          "allowed_actions": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "confirm",
+                "reformulate"
+              ]
+            },
+            "type": "array",
+            "title": "Allowed Actions"
+          },
+          "saved_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Saved At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "objects",
+          "period",
+          "article_types",
+          "publication_kinds",
+          "conditions",
+          "search_criteria",
+          "resources",
+          "status",
+          "gaps",
+          "problems",
+          "confirmed_version",
+          "has_unconfirmed_changes",
+          "allowed_actions",
+          "saved_at"
+        ],
+        "title": "CriteriaDraft"
+      },
+      "CriteriaFields": {
+        "properties": {
+          "objects": {
+            "items": {
+              "$ref": "#/components/schemas/StudyObject"
+            },
+            "type": "array",
+            "title": "Objects"
+          },
+          "period": {
+            "$ref": "#/components/schemas/YearRange"
+          },
+          "article_types": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "primary_study",
+                "review",
+                "meta_analysis",
+                "other"
+              ]
+            },
+            "type": "array",
+            "title": "Article Types"
+          },
+          "publication_kinds": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "journal_article",
+                "preprint",
+                "other"
+              ]
+            },
+            "type": "array",
+            "title": "Publication Kinds"
+          },
+          "conditions": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "wild",
+                "captive"
+              ]
+            },
+            "type": "array",
+            "title": "Conditions"
+          },
+          "search_criteria": {
+            "items": {
+              "$ref": "#/components/schemas/SearchCriterion"
+            },
+            "type": "array",
+            "title": "Search Criteria"
+          },
+          "resources": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "pubmed",
+                "europe_pmc"
+              ]
+            },
+            "type": "array",
+            "title": "Resources"
+          }
+        },
+        "type": "object",
+        "required": [
+          "objects",
+          "period",
+          "article_types",
+          "publication_kinds",
+          "conditions",
+          "search_criteria",
+          "resources"
+        ],
+        "title": "CriteriaFields",
+        "description": "Редактируемая часть критериев; все поля попадают в запросы PubMed и Europe PMC."
+      },
+      "CriteriaProposal": {
+        "properties": {
+          "search_criteria": {
+            "items": {
+              "$ref": "#/components/schemas/SearchCriterion"
+            },
+            "type": "array",
+            "title": "Search Criteria"
+          }
+        },
+        "type": "object",
+        "required": [
+          "search_criteria"
+        ],
+        "title": "CriteriaProposal",
+        "description": "Новая редакция по вопросу; применяется только после подтверждения пользователя."
+      },
+      "CriteriaVersion": {
+        "properties": {
+          "version": {
+            "type": "integer",
+            "title": "Version"
+          }
+        },
+        "type": "object",
+        "required": [
+          "version"
+        ],
+        "title": "CriteriaVersion"
+      },
+      "DecisionChange": {
+        "properties": {
+          "decision": {
+            "type": "string",
+            "enum": [
+              "included",
+              "excluded",
+              "needs_review"
+            ],
+            "title": "Decision"
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Reason"
+          }
+        },
+        "type": "object",
+        "required": [
+          "decision",
+          "reason"
+        ],
+        "title": "DecisionChange"
+      },
+      "DecisionRecord": {
+        "properties": {
+          "decision": {
+            "type": "string",
+            "enum": [
+              "included",
+              "excluded",
+              "needs_review"
+            ],
+            "title": "Decision"
+          },
+          "reason": {
+            "type": "string",
+            "title": "Reason"
+          },
+          "author": {
+            "type": "string",
+            "enum": [
+              "system",
+              "user"
+            ],
+            "title": "Author"
+          },
+          "criteria_version": {
+            "type": "integer",
+            "title": "Criteria Version"
+          }
+        },
+        "type": "object",
+        "required": [
+          "decision",
+          "reason",
+          "author",
+          "criteria_version"
+        ],
+        "title": "DecisionRecord"
+      },
+      "DocumentRow": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "publication_id": {
+            "type": "string",
+            "title": "Publication Id"
+          },
+          "publication_label": {
+            "type": "string",
+            "title": "Publication Label"
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "main",
+              "supplement"
+            ],
+            "title": "Role"
+          },
+          "version": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Version"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "fetching",
+              "ready",
+              "not_found",
+              "needs_review",
+              "error",
+              "not_parsed"
+            ],
+            "title": "Status"
+          },
+          "status_detail": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Status Detail"
+          },
+          "source_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Source Url"
+          },
+          "allowed_actions": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "retry_fetch",
+                "upload",
+                "confirm_identity"
+              ]
+            },
+            "type": "array",
+            "title": "Allowed Actions"
+          },
+          "fetch_status": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "pending",
+                  "fetching",
+                  "available",
+                  "unavailable",
+                  "error"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Fetch Status"
+          },
+          "identity_status": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "pending",
+                  "confirmed",
+                  "needs_review",
+                  "mismatch"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Identity Status"
+          },
+          "parse_status": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "pending",
+                  "parsing",
+                  "parsed",
+                  "partial",
+                  "unsupported",
+                  "error"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Parse Status"
+          },
+          "sha256": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sha256"
+          },
+          "acquisition": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "fetched",
+                  "uploaded"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Acquisition"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "publication_id",
+          "publication_label",
+          "role",
+          "version",
+          "status",
+          "status_detail",
+          "source_url",
+          "allowed_actions",
+          "fetch_status",
+          "identity_status",
+          "parse_status",
+          "sha256",
+          "acquisition"
+        ],
+        "title": "DocumentRow"
+      },
+      "DocumentVersionRef": {
+        "properties": {
+          "document_id": {
+            "type": "string",
+            "title": "Document Id"
+          },
+          "version": {
+            "type": "integer",
+            "title": "Version"
+          }
+        },
+        "type": "object",
+        "required": [
+          "document_id",
+          "version"
+        ],
+        "title": "DocumentVersionRef"
+      },
+      "DocumentWork": {
+        "properties": {
+          "publication_id": {
+            "type": "string",
+            "title": "Publication Id"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "document_count": {
+            "type": "integer",
+            "title": "Document Count"
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "fetching",
+              "ready",
+              "no_full_text",
+              "needs_review"
+            ],
+            "title": "State"
+          },
+          "gaps": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Gaps"
+          },
+          "allowed_actions": {
+            "items": {
+              "type": "string",
+              "const": "upload_supplement"
+            },
+            "type": "array",
+            "title": "Allowed Actions"
+          }
+        },
+        "type": "object",
+        "required": [
+          "publication_id",
+          "label",
+          "document_count",
+          "state",
+          "gaps",
+          "allowed_actions"
+        ],
+        "title": "DocumentWork",
+        "description": "Строка работы над её документами; документы — в `Extraction.documents`."
+      },
+      "Evidence": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "measure_id": {
+            "type": "string",
+            "title": "Measure Id"
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "value",
+              "context"
+            ],
+            "title": "Role"
+          },
+          "publication_label": {
+            "type": "string",
+            "title": "Publication Label"
+          },
+          "document_id": {
+            "type": "string",
+            "title": "Document Id"
+          },
+          "document_version_id": {
+            "type": "string",
+            "title": "Document Version Id"
+          },
+          "document_name": {
+            "type": "string",
+            "title": "Document Name"
+          },
+          "document_version": {
+            "type": "integer",
+            "title": "Document Version"
+          },
+          "quote": {
+            "type": "string",
+            "title": "Quote"
+          },
+          "claimed_location": {
+            "type": "string",
+            "title": "Claimed Location"
+          },
+          "locator": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Locator"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "fragment": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/FragmentLine"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Fragment"
+          },
+          "precision_note": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Precision Note"
+          },
+          "diagnostic": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Diagnostic"
+          },
+          "source": {
+            "$ref": "#/components/schemas/SourceMeta"
+          },
+          "verification_status": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "verified",
+              "needs_review",
+              "rejected"
+            ],
+            "title": "Verification Status"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "measure_id",
+          "role",
+          "publication_label",
+          "document_id",
+          "document_version_id",
+          "document_name",
+          "document_version",
+          "quote",
+          "claimed_location",
+          "locator",
+          "fragment",
+          "precision_note",
+          "diagnostic",
+          "source",
+          "verification_status"
+        ],
+        "title": "Evidence"
+      },
+      "Extraction": {
+        "properties": {
+          "documents": {
+            "items": {
+              "$ref": "#/components/schemas/DocumentRow"
+            },
+            "type": "array",
+            "title": "Documents"
+          },
+          "works": {
+            "items": {
+              "$ref": "#/components/schemas/DocumentWork"
+            },
+            "type": "array",
+            "title": "Works"
+          },
+          "startable_publication_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Startable Publication Ids"
+          },
+          "operation": {
+            "$ref": "#/components/schemas/Operation"
+          },
+          "start_blocked_reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Start Blocked Reason"
+          }
+        },
+        "type": "object",
+        "required": [
+          "documents",
+          "works",
+          "startable_publication_ids",
+          "operation",
+          "start_blocked_reason"
+        ],
+        "title": "Extraction"
+      },
+      "Finding": {
+        "properties": {
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "measure_refs": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Measure Refs"
+          },
+          "species": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Species"
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/FindingItem"
+            },
+            "type": "array",
+            "title": "Items",
+            "default": []
+          }
+        },
+        "type": "object",
+        "required": [
+          "text",
+          "measure_refs"
+        ],
+        "title": "Finding"
+      },
+      "FindingItem": {
+        "properties": {
+          "measure_id": {
+            "type": "string",
+            "title": "Measure Id"
+          },
+          "number": {
+            "type": "integer",
+            "title": "Number"
+          },
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "context": {
+            "type": "string",
+            "title": "Context"
+          },
+          "publication": {
+            "type": "string",
+            "title": "Publication"
+          },
+          "checked_manually": {
+            "type": "boolean",
+            "title": "Checked Manually",
+            "default": false
+          }
+        },
+        "type": "object",
+        "required": [
+          "measure_id",
+          "number",
+          "title",
+          "context",
+          "publication"
+        ],
+        "title": "FindingItem"
+      },
+      "FragmentLine": {
+        "properties": {
+          "number": {
+            "type": "integer",
+            "title": "Number"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "highlighted": {
+            "type": "boolean",
+            "title": "Highlighted"
+          }
+        },
+        "type": "object",
+        "required": [
+          "number",
+          "text",
+          "highlighted"
+        ],
+        "title": "FragmentLine"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "HealthResponse": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "ok",
+              "degraded"
+            ],
+            "title": "Status"
+          },
+          "database": {
+            "type": "string",
+            "enum": [
+              "ok",
+              "unavailable"
+            ],
+            "title": "Database"
+          }
+        },
+        "type": "object",
+        "required": [
+          "status",
+          "database"
+        ],
+        "title": "HealthResponse"
+      },
+      "IdentityDecision": {
+        "properties": {
+          "belongs_to_publication": {
+            "type": "boolean",
+            "title": "Belongs To Publication"
+          }
+        },
+        "type": "object",
+        "required": [
+          "belongs_to_publication"
+        ],
+        "title": "IdentityDecision",
+        "description": "Подтверждение, что файл относится к выбранной работе."
+      },
+      "Locator": {
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "pdf",
+              "jats",
+              "jats_row",
+              "jats_cell",
+              "csv"
+            ],
+            "title": "Kind"
+          },
+          "page": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Page"
+          },
+          "printed": {
+            "type": "string",
+            "title": "Printed"
+          },
+          "context": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Context"
+          },
+          "path": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Path"
+          },
+          "node_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Node Id"
+          },
+          "table": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Table"
+          },
+          "row": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Row"
+          },
+          "column": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Column"
+          },
+          "headers": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Headers"
+          },
+          "record": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Record"
+          }
+        },
+        "type": "object",
+        "required": [
+          "kind",
+          "page",
+          "printed",
+          "context",
+          "path",
+          "node_id",
+          "table",
+          "row",
+          "column",
+          "headers",
+          "record"
+        ],
+        "title": "Locator",
+        "description": "Адрес основания в версии документа (spec «Адресуемое основание»).\n\nPDF — физическая страница; JATS — путь и ID узла, для таблицы — строка и столбец с\nзаголовками; CSV — номер записи (не физической строки) и столбец."
+      },
+      "LogEvent": {
+        "properties": {
+          "at": {
+            "type": "string",
+            "title": "At"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          }
+        },
+        "type": "object",
+        "required": [
+          "at",
+          "message"
+        ],
+        "title": "LogEvent"
+      },
+      "LookupCandidate": {
+        "properties": {
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "year": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Year"
+          },
+          "doi": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Doi"
+          },
+          "pmid": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pmid"
+          },
+          "already_listed": {
+            "type": "boolean",
+            "title": "Already Listed"
+          }
+        },
+        "type": "object",
+        "required": [
+          "title",
+          "year",
+          "doi",
+          "pmid",
+          "already_listed"
+        ],
+        "title": "LookupCandidate"
+      },
+      "LookupQuery": {
+        "properties": {
+          "query": {
+            "type": "string",
+            "title": "Query"
+          }
+        },
+        "type": "object",
+        "required": [
+          "query"
+        ],
+        "title": "LookupQuery",
+        "description": "DOI, PMID или название."
+      },
+      "ManualAddition": {
+        "properties": {
+          "doi": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Doi"
+          },
+          "pmid": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pmid"
+          }
+        },
+        "type": "object",
+        "required": [
+          "doi",
+          "pmid"
+        ],
+        "title": "ManualAddition"
+      },
+      "MeasureCorrection": {
+        "properties": {
+          "expected_revision": {
+            "type": "integer",
+            "title": "Expected Revision"
+          },
+          "value_original": {
+            "type": "string",
+            "title": "Value Original"
+          },
+          "unit_original": {
+            "type": "string",
+            "title": "Unit Original"
+          },
+          "comment": {
+            "type": "string",
+            "title": "Comment"
+          }
+        },
+        "type": "object",
+        "required": [
+          "expected_revision",
+          "value_original",
+          "unit_original",
+          "comment"
+        ],
+        "title": "MeasureCorrection",
+        "description": "Исправление значения; `expected_revision` предотвращает потерю параллельной правки."
+      },
+      "MeasureReview": {
+        "properties": {
+          "review_status": {
+            "type": "string",
+            "enum": [
+              "checked",
+              "rejected"
+            ],
+            "title": "Review Status"
+          }
+        },
+        "type": "object",
+        "required": [
+          "review_status"
+        ],
+        "title": "MeasureReview"
+      },
+      "MeasureRow": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "number": {
+            "type": "integer",
+            "title": "Number"
+          },
+          "species_name_in_source": {
+            "type": "string",
+            "title": "Species Name In Source"
+          },
+          "species_label": {
+            "type": "string",
+            "title": "Species Label"
+          },
+          "taxonomy_note": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Taxonomy Note"
+          },
+          "measure_kind": {
+            "type": "string",
+            "enum": [
+              "mean",
+              "median",
+              "observed_maximum",
+              "individual_age",
+              "modelled_age",
+              "survival_interval",
+              "maturity_age",
+              "other"
+            ],
+            "title": "Measure Kind"
+          },
+          "definition": {
+            "type": "string",
+            "title": "Definition"
+          },
+          "value_original": {
+            "type": "string",
+            "title": "Value Original"
+          },
+          "unit_original": {
+            "type": "string",
+            "title": "Unit Original"
+          },
+          "qualifier": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Qualifier"
+          },
+          "uncertainty": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Uncertainty"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "subject": {
+            "$ref": "#/components/schemas/Subject"
+          },
+          "conditions": {
+            "$ref": "#/components/schemas/Conditions"
+          },
+          "method": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Method"
+          },
+          "publication_id": {
+            "type": "string",
+            "title": "Publication Id"
+          },
+          "publication_label": {
+            "type": "string",
+            "title": "Publication Label"
+          },
+          "author_notes": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Author Notes"
+          },
+          "origin_kind": {
+            "type": "string",
+            "enum": [
+              "own_result",
+              "secondary_report"
+            ],
+            "title": "Origin Kind"
+          },
+          "evidence_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Evidence Ids"
+          },
+          "context_evidence_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Context Evidence Ids"
+          },
+          "related_measure_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Related Measure Ids"
+          },
+          "review_status": {
+            "type": "string",
+            "enum": [
+              "unreviewed",
+              "checked",
+              "corrected",
+              "rejected"
+            ],
+            "title": "Review Status"
+          },
+          "verification_status": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "verified",
+              "needs_review",
+              "rejected"
+            ],
+            "title": "Verification Status"
+          },
+          "verification_gap": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "quote_not_found",
+                  "value_not_matched"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Verification Gap"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "number",
+          "species_name_in_source",
+          "species_label",
+          "taxonomy_note",
+          "measure_kind",
+          "definition",
+          "value_original",
+          "unit_original",
+          "qualifier",
+          "uncertainty",
+          "subject",
+          "conditions",
+          "method",
+          "publication_id",
+          "publication_label",
+          "author_notes",
+          "origin_kind",
+          "evidence_ids",
+          "context_evidence_ids",
+          "related_measure_ids",
+          "review_status",
+          "verification_status",
+          "verification_gap"
+        ],
+        "title": "MeasureRow",
+        "description": "Опубликованный показатель одной особи или группы (spec «Опубликованный показатель»)."
+      },
+      "Operation": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "not_started",
+              "queued",
+              "running",
+              "waiting_llm",
+              "pause_requested",
+              "paused",
+              "terminate_requested",
+              "terminated",
+              "completed",
+              "failed"
+            ],
+            "title": "Status"
+          },
+          "progress": {
+            "type": "number",
+            "title": "Progress"
+          },
+          "works": {
+            "items": {
+              "$ref": "#/components/schemas/WorkRun"
+            },
+            "type": "array",
+            "title": "Works"
+          },
+          "allowed_actions": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "start",
+                "pause",
+                "resume",
+                "stop",
+                "retry_failed"
+              ]
+            },
+            "type": "array",
+            "title": "Allowed Actions"
+          }
+        },
+        "type": "object",
+        "required": [
+          "status",
+          "progress",
+          "works",
+          "allowed_actions"
+        ],
+        "title": "Operation"
+      },
+      "OperationInProgress": {
+        "properties": {
+          "message": {
+            "type": "string",
+            "title": "Message"
+          }
+        },
+        "type": "object",
+        "required": [
+          "message"
+        ],
+        "title": "OperationInProgress",
+        "description": "Общий слот занят незавершённой операцией; сохранённое можно читать."
+      },
+      "Problem": {
+        "properties": {
+          "target": {
+            "type": "string",
+            "title": "Target"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          }
+        },
+        "type": "object",
+        "required": [
+          "target",
+          "message"
+        ],
+        "title": "Problem",
+        "description": "Причина, по которой подтверждение недоступно; `target` — id строки или имя поля."
+      },
+      "ProceedResult": {
+        "properties": {
+          "reached_step": {
+            "type": "string",
+            "enum": [
+              "question",
+              "criteria",
+              "search",
+              "selection",
+              "preparation",
+              "result"
+            ],
+            "title": "Reached Step"
+          }
+        },
+        "type": "object",
+        "required": [
+          "reached_step"
+        ],
+        "title": "ProceedResult"
+      },
+      "PublicationCard": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "authors": {
+            "type": "string",
+            "title": "Authors"
+          },
+          "doi": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Doi"
+          },
+          "year": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Year"
+          },
+          "version_type": {
+            "type": "string",
+            "enum": [
+              "journal",
+              "preprint"
+            ],
+            "title": "Version Type"
+          },
+          "provenance": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "pubmed",
+                "europe_pmc",
+                "manual"
+              ]
+            },
+            "type": "array",
+            "title": "Provenance"
+          },
+          "decision": {
+            "type": "string",
+            "enum": [
+              "included",
+              "excluded",
+              "needs_review"
+            ],
+            "title": "Decision"
+          },
+          "versions": {
+            "type": "integer",
+            "title": "Versions"
+          },
+          "version_link": {
+            "type": "string",
+            "enum": [
+              "none",
+              "confirmed",
+              "needs_review"
+            ],
+            "title": "Version Link"
+          },
+          "open_access": {
+            "type": "string",
+            "enum": [
+              "open",
+              "closed",
+              "unknown"
+            ],
+            "title": "Open Access"
+          },
+          "selected": {
+            "type": "boolean",
+            "title": "Selected"
+          },
+          "select_blocked_reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Select Blocked Reason"
+          },
+          "abstract": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Abstract"
+          },
+          "sources": {
+            "items": {
+              "$ref": "#/components/schemas/SourceRecord"
+            },
+            "type": "array",
+            "title": "Sources"
+          },
+          "decision_record": {
+            "$ref": "#/components/schemas/DecisionRecord"
+          },
+          "related_versions": {
+            "items": {
+              "$ref": "#/components/schemas/RelatedVersion"
+            },
+            "type": "array",
+            "title": "Related Versions"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "authors",
+          "doi",
+          "year",
+          "version_type",
+          "provenance",
+          "decision",
+          "versions",
+          "version_link",
+          "open_access",
+          "selected",
+          "select_blocked_reason",
+          "abstract",
+          "sources",
+          "decision_record",
+          "related_versions"
+        ],
+        "title": "PublicationCard"
+      },
+      "PublicationRow": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "authors": {
+            "type": "string",
+            "title": "Authors"
+          },
+          "doi": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Doi"
+          },
+          "year": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Year"
+          },
+          "version_type": {
+            "type": "string",
+            "enum": [
+              "journal",
+              "preprint"
+            ],
+            "title": "Version Type"
+          },
+          "provenance": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "pubmed",
+                "europe_pmc",
+                "manual"
+              ]
+            },
+            "type": "array",
+            "title": "Provenance"
+          },
+          "decision": {
+            "type": "string",
+            "enum": [
+              "included",
+              "excluded",
+              "needs_review"
+            ],
+            "title": "Decision"
+          },
+          "versions": {
+            "type": "integer",
+            "title": "Versions"
+          },
+          "version_link": {
+            "type": "string",
+            "enum": [
+              "none",
+              "confirmed",
+              "needs_review"
+            ],
+            "title": "Version Link"
+          },
+          "open_access": {
+            "type": "string",
+            "enum": [
+              "open",
+              "closed",
+              "unknown"
+            ],
+            "title": "Open Access"
+          },
+          "selected": {
+            "type": "boolean",
+            "title": "Selected"
+          },
+          "select_blocked_reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Select Blocked Reason"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "authors",
+          "doi",
+          "year",
+          "version_type",
+          "provenance",
+          "decision",
+          "versions",
+          "version_link",
+          "open_access",
+          "selected",
+          "select_blocked_reason"
+        ],
+        "title": "PublicationRow"
+      },
+      "QuestionDraft": {
+        "properties": {
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "saved_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Saved At",
+            "description": "ISO 8601; None — черновик ещё не сохранялся"
+          }
+        },
+        "type": "object",
+        "required": [
+          "text",
+          "saved_at"
+        ],
+        "title": "QuestionDraft"
+      },
+      "QuestionText": {
+        "properties": {
+          "text": {
+            "type": "string",
+            "maxLength": 5000,
+            "title": "Text"
+          }
+        },
+        "type": "object",
+        "required": [
+          "text"
+        ],
+        "title": "QuestionText"
+      },
+      "QuestionVersion": {
+        "properties": {
+          "version": {
+            "type": "integer",
+            "title": "Version"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "created_at": {
+            "type": "string",
+            "title": "Created At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "version",
+          "text",
+          "created_at"
+        ],
+        "title": "QuestionVersion",
+        "description": "Неизменяемый снимок формулировки на один запуск подготовки критериев."
+      },
+      "RelatedVersion": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "version_type": {
+            "type": "string",
+            "enum": [
+              "journal",
+              "preprint"
+            ],
+            "title": "Version Type"
+          },
+          "link": {
+            "type": "string",
+            "enum": [
+              "none",
+              "confirmed",
+              "needs_review"
+            ],
+            "title": "Link"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "version_type",
+          "link"
+        ],
+        "title": "RelatedVersion"
+      },
+      "Result": {
+        "properties": {
+          "revision": {
+            "$ref": "#/components/schemas/Revision"
+          },
+          "question": {
+            "type": "string",
+            "title": "Question"
+          },
+          "search": {
+            "$ref": "#/components/schemas/SearchParameters"
+          },
+          "summary": {
+            "$ref": "#/components/schemas/Summary"
+          },
+          "coverage": {
+            "$ref": "#/components/schemas/Coverage"
+          },
+          "measures": {
+            "items": {
+              "$ref": "#/components/schemas/MeasureRow"
+            },
+            "type": "array",
+            "title": "Measures"
+          },
+          "allowed_actions": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "refresh",
+                "export"
+              ]
+            },
+            "type": "array",
+            "title": "Allowed Actions"
+          }
+        },
+        "type": "object",
+        "required": [
+          "revision",
+          "question",
+          "search",
+          "summary",
+          "coverage",
+          "measures",
+          "allowed_actions"
+        ],
+        "title": "Result"
+      },
+      "Revision": {
+        "properties": {
+          "number": {
+            "type": "integer",
+            "title": "Number"
+          },
+          "summary_revision": {
+            "type": "integer",
+            "title": "Summary Revision"
+          },
+          "freshness": {
+            "type": "string",
+            "enum": [
+              "current",
+              "stale",
+              "superseded"
+            ],
+            "title": "Freshness"
+          },
+          "stale_reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Stale Reason"
+          },
+          "complete": {
+            "type": "boolean",
+            "title": "Complete"
+          }
+        },
+        "type": "object",
+        "required": [
+          "number",
+          "summary_revision",
+          "freshness",
+          "stale_reason",
+          "complete"
+        ],
+        "title": "Revision",
+        "description": "Ревизия таблицы; краткий вывод может быть построен по более ранней."
+      },
+      "SearchCriterion": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "terms": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Terms"
+          },
+          "suggested_terms": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Suggested Terms"
+          },
+          "origin": {
+            "type": "string",
+            "enum": [
+              "suggested",
+              "edited",
+              "added"
+            ],
+            "title": "Origin"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "label",
+          "terms",
+          "suggested_terms",
+          "origin"
+        ],
+        "title": "SearchCriterion"
+      },
+      "SearchParameters": {
+        "properties": {
+          "period": {
+            "$ref": "#/components/schemas/YearRange"
+          },
+          "publication_kinds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Publication Kinds"
+          },
+          "conditions": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Conditions"
+          },
+          "resources": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "pubmed",
+                "europe_pmc"
+              ]
+            },
+            "type": "array",
+            "title": "Resources"
+          },
+          "queries": {
+            "items": {
+              "$ref": "#/components/schemas/SearchQuery"
+            },
+            "type": "array",
+            "title": "Queries"
+          }
+        },
+        "type": "object",
+        "required": [
+          "period",
+          "publication_kinds",
+          "conditions",
+          "resources",
+          "queries"
+        ],
+        "title": "SearchParameters"
+      },
+      "SearchQuery": {
+        "properties": {
+          "resource": {
+            "type": "string",
+            "enum": [
+              "pubmed",
+              "europe_pmc"
+            ],
+            "title": "Resource"
+          },
+          "query": {
+            "type": "string",
+            "title": "Query"
+          }
+        },
+        "type": "object",
+        "required": [
+          "resource",
+          "query"
+        ],
+        "title": "SearchQuery"
+      },
+      "SearchRefused": {
+        "properties": {
+          "message": {
+            "type": "string",
+            "title": "Message"
+          }
+        },
+        "type": "object",
+        "required": [
+          "message"
+        ],
+        "title": "SearchRefused",
+        "description": "Поиск не запущен: слот занят другой операцией или критерии нельзя выразить в запросе."
+      },
+      "SearchRun": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "not_started",
+              "running",
+              "completed",
+              "stopped"
+            ],
+            "title": "Status"
+          },
+          "criteria_version": {
+            "type": "integer",
+            "title": "Criteria Version"
+          },
+          "progress": {
+            "type": "number",
+            "title": "Progress"
+          },
+          "sources": {
+            "items": {
+              "$ref": "#/components/schemas/SourceRun"
+            },
+            "type": "array",
+            "title": "Sources"
+          },
+          "allowed_actions": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "start",
+                "stop",
+                "retry"
+              ]
+            },
+            "type": "array",
+            "title": "Allowed Actions"
+          },
+          "selection_blocked_reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Selection Blocked Reason"
+          }
+        },
+        "type": "object",
+        "required": [
+          "status",
+          "criteria_version",
+          "progress",
+          "sources",
+          "allowed_actions",
+          "selection_blocked_reason"
+        ],
+        "title": "SearchRun"
+      },
+      "Selection": {
+        "properties": {
+          "publications": {
+            "items": {
+              "$ref": "#/components/schemas/PublicationRow"
+            },
+            "type": "array",
+            "title": "Publications"
+          },
+          "selected_count": {
+            "type": "integer",
+            "title": "Selected Count"
+          },
+          "limit": {
+            "type": "integer",
+            "title": "Limit"
+          },
+          "proceed_blocked_reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Proceed Blocked Reason"
+          }
+        },
+        "type": "object",
+        "required": [
+          "publications",
+          "selected_count",
+          "limit",
+          "proceed_blocked_reason"
+        ],
+        "title": "Selection"
+      },
+      "SelectionChange": {
+        "properties": {
+          "selected": {
+            "type": "boolean",
+            "title": "Selected"
+          }
+        },
+        "type": "object",
+        "required": [
+          "selected"
+        ],
+        "title": "SelectionChange"
+      },
+      "ServiceProblem": {
+        "properties": {
+          "message": {
+            "type": "string",
+            "title": "Message"
+          }
+        },
+        "type": "object",
+        "required": [
+          "message"
+        ],
+        "title": "ServiceProblem",
+        "description": "Внешний сервис не ответил; вопрос и сохранённые данные не изменились."
+      },
+      "SessionResponse": {
+        "properties": {
+          "login": {
+            "type": "string",
+            "title": "Login"
+          }
+        },
+        "type": "object",
+        "required": [
+          "login"
+        ],
+        "title": "SessionResponse"
+      },
+      "SetAsideItem": {
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "simulation",
+              "raw_data",
+              "figure_only",
+              "other_species",
+              "other"
+            ],
+            "title": "Kind"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description"
+          }
+        },
+        "type": "object",
+        "required": [
+          "kind",
+          "description"
+        ],
+        "title": "SetAsideItem",
+        "description": "Что сознательно не стало показателем: реальный вид и описание из карточки, не общая\nфраза (симуляции, исходные данные и т. п.)."
+      },
+      "SourceMeta": {
+        "properties": {
+          "resource": {
+            "type": "string",
+            "title": "Resource"
+          },
+          "identifier": {
+            "type": "string",
+            "title": "Identifier"
+          },
+          "source_type": {
+            "type": "string",
+            "title": "Source Type"
+          },
+          "year": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Year"
+          }
+        },
+        "type": "object",
+        "required": [
+          "resource",
+          "identifier",
+          "source_type",
+          "year"
+        ],
+        "title": "SourceMeta"
+      },
+      "SourceRecord": {
+        "properties": {
+          "resource": {
+            "type": "string",
+            "enum": [
+              "pubmed",
+              "europe_pmc",
+              "manual"
+            ],
+            "title": "Resource"
+          },
+          "identifier": {
+            "type": "string",
+            "title": "Identifier"
+          },
+          "url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Url"
+          }
+        },
+        "type": "object",
+        "required": [
+          "resource",
+          "identifier",
+          "url"
+        ],
+        "title": "SourceRecord"
+      },
+      "SourceRun": {
+        "properties": {
+          "resource": {
+            "type": "string",
+            "enum": [
+              "pubmed",
+              "europe_pmc"
+            ],
+            "title": "Resource"
+          },
+          "query": {
+            "type": "string",
+            "title": "Query"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "running",
+              "hits",
+              "empty",
+              "error",
+              "stopped"
+            ],
+            "title": "Status"
+          },
+          "hit_count": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Hit Count"
+          },
+          "returned_count": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Returned Count"
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error"
+          }
+        },
+        "type": "object",
+        "required": [
+          "resource",
+          "query",
+          "status",
+          "hit_count",
+          "returned_count",
+          "error"
+        ],
+        "title": "SourceRun"
+      },
+      "StartExtraction": {
+        "properties": {
+          "publication_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 8,
+            "minItems": 1,
+            "title": "Publication Ids"
+          },
+          "document_versions": {
+            "items": {
+              "$ref": "#/components/schemas/DocumentVersionRef"
+            },
+            "type": "array",
+            "title": "Document Versions"
+          }
+        },
+        "type": "object",
+        "required": [
+          "publication_ids",
+          "document_versions"
+        ],
+        "title": "StartExtraction",
+        "description": "Снимок входов операции: работы (до восьми) и версии их документов."
+      },
+      "Study": {
+        "properties": {
+          "reached_step": {
+            "type": "string",
+            "enum": [
+              "question",
+              "criteria",
+              "search",
+              "selection",
+              "preparation",
+              "result"
+            ],
+            "title": "Reached Step"
+          }
+        },
+        "type": "object",
+        "required": [
+          "reached_step"
+        ],
+        "title": "Study",
+        "description": "Текущее исследование: один вопрос и достигнутый шаг маршрута."
+      },
+      "StudyObject": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "scientific_name": {
+            "type": "string",
+            "title": "Scientific Name"
+          },
+          "origin": {
+            "type": "string",
+            "enum": [
+              "suggested",
+              "edited",
+              "added"
+            ],
+            "title": "Origin"
+          },
+          "aliases": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Aliases"
+          },
+          "suggested_aliases": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Suggested Aliases"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "scientific_name",
+          "origin"
+        ],
+        "title": "StudyObject"
+      },
+      "Subject": {
+        "properties": {
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "sex": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sex"
+          },
+          "sample_size": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sample Size"
+          },
+          "sample_size_scope": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sample Size Scope"
+          }
+        },
+        "type": "object",
+        "required": [
+          "label",
+          "sex",
+          "sample_size",
+          "sample_size_scope"
+        ],
+        "title": "Subject"
+      },
+      "Summary": {
+        "properties": {
+          "findings": {
+            "items": {
+              "$ref": "#/components/schemas/Finding"
+            },
+            "type": "array",
+            "title": "Findings"
+          },
+          "limits": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Limits"
+          },
+          "absent_reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Absent Reason"
+          },
+          "excluded_count": {
+            "type": "integer",
+            "title": "Excluded Count",
+            "default": 0
+          },
+          "excluded_reasons": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Excluded Reasons",
+            "default": []
+          },
+          "works": {
+            "items": {
+              "$ref": "#/components/schemas/SummaryWork"
+            },
+            "type": "array",
+            "title": "Works",
+            "default": []
+          }
+        },
+        "type": "object",
+        "required": [
+          "findings",
+          "limits",
+          "absent_reason"
+        ],
+        "title": "Summary",
+        "description": "Краткий вывод: сначала находки со ссылками на строки, затем пределы вывода."
+      },
+      "SummaryWork": {
+        "properties": {
+          "publication_id": {
+            "type": "string",
+            "title": "Publication Id"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "outcome": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "measures_extracted",
+                  "no_measures",
+                  "unresolved",
+                  "unavailable",
+                  "error"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Outcome"
+          },
+          "unresolved": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Unresolved",
+            "default": []
+          },
+          "set_aside": {
+            "items": {
+              "$ref": "#/components/schemas/SetAsideItem"
+            },
+            "type": "array",
+            "title": "Set Aside",
+            "default": []
+          },
+          "gaps": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Gaps",
+            "default": []
+          }
+        },
+        "type": "object",
+        "required": [
+          "publication_id",
+          "label",
+          "outcome"
+        ],
+        "title": "SummaryWork",
+        "description": "Работа, не давшая показателей в кратком выводе: итог обработки отдельно от причин."
+      },
+      "Uncertainty": {
+        "properties": {
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "kind": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Kind"
+          },
+          "level_percent": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Level Percent"
+          },
+          "plus_minus": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Plus Minus"
+          },
+          "lower": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Lower"
+          },
+          "upper": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Upper"
+          },
+          "upper_status": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Upper Status"
+          }
+        },
+        "type": "object",
+        "required": [
+          "label",
+          "kind",
+          "level_percent",
+          "plus_minus",
+          "lower",
+          "upper",
+          "upper_status"
+        ],
+        "title": "Uncertainty",
+        "description": "Опубликованная неопределённость; отсутствующее не равно нулю."
+      },
+      "UnsupportedQuestion": {
+        "properties": {
+          "message": {
+            "type": "string",
+            "title": "Message"
+          },
+          "example": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Example"
+          }
+        },
+        "type": "object",
+        "required": [
+          "message"
+        ],
+        "title": "UnsupportedQuestion",
+        "description": "Отказ готовить критерии.\n\nВопрос вне формы Stage 1: `example` — как переформулировать, новую форму результата\nсистема не придумывает. Пустой черновик: только `message`."
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      },
+      "VersionLinkChange": {
+        "properties": {
+          "related_id": {
+            "type": "string",
+            "title": "Related Id"
+          },
+          "same_work": {
+            "type": "boolean",
+            "title": "Same Work"
+          }
+        },
+        "type": "object",
+        "required": [
+          "related_id",
+          "same_work"
+        ],
+        "title": "VersionLinkChange"
+      },
+      "WorkRun": {
+        "properties": {
+          "publication_id": {
+            "type": "string",
+            "title": "Publication Id"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "execution": {
+            "type": "string",
+            "enum": [
+              "queued",
+              "running",
+              "done",
+              "failed",
+              "skipped"
+            ],
+            "title": "Execution"
+          },
+          "outcome": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "measures_extracted",
+                  "no_measures",
+                  "unresolved",
+                  "unavailable",
+                  "error"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Outcome"
+          },
+          "measure_count": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Measure Count"
+          },
+          "detail": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Detail"
+          },
+          "gaps": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Gaps"
+          }
+        },
+        "type": "object",
+        "required": [
+          "publication_id",
+          "label",
+          "execution",
+          "outcome",
+          "measure_count",
+          "detail",
+          "gaps"
+        ],
+        "title": "WorkRun"
+      },
+      "YearRange": {
+        "properties": {
+          "from_year": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "From Year"
+          },
+          "to_year": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "To Year"
+          }
+        },
+        "type": "object",
+        "required": [
+          "from_year",
+          "to_year"
+        ],
+        "title": "YearRange"
+      }
+    }
+  }
+}

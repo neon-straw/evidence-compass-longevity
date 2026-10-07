@@ -1,0 +1,104 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+*.egg-info/
+pip-wheel-metadata/
+share/python-wheels/
+.installed.cfg
+
+# Python environments
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# Python tooling
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+.pyright/
+.ruff_cache/
+.tox/
+.nox/
+.hypothesis/
+
+# Node.js / React
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.npm/
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+.pnp.*
+
+# Frontend build output
+dist/
+build/
+.next/
+out/
+.nuxt/
+.vite/
+.cache/
+*.tsbuildinfo
+
+# LangGraph local/runtime state
+.langgraph_api/
+.langgraph/
+langgraph-data/
+
+# PostgreSQL local data and dumps
+pgdata/
+postgres-data/
+*.dump
+*.backup
+*.sql.gz
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+!.env.*.example
+!frontend/.env.mock
+
+# IDE and OS files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Logs and local files
+*.log
+tmp/
+temp/
+var/
+fixtures/pdfs/
+
+# Local account provisioning and browser artifacts
+.secrets/
+frontend/.playwright-cli/
+frontend/playwright-report/
+frontend/test-results/
+
+# Data
+/backend/storage/
+/data/corpus/materials/

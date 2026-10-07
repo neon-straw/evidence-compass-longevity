@@ -1,0 +1,76 @@
+name: evidence-compass
+
+services:
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: ec
+      POSTGRES_PASSWORD: ec
+      POSTGRES_DB: evidence_compass
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ec -d evidence_compass"]
+      interval: 2s
+      retries: 30
+
+  # Отдельный PostgreSQL для тестов: рабочая и тестовая установки не делят БД (ADR 0008).
+  db-test:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: ec
+      POSTGRES_PASSWORD: ec
+      POSTGRES_DB: evidence_compass_test
+    ports:
+      - "5434:5432"
+    tmpfs:
+      - /var/lib/postgresql/data
+    profiles: ["test"]
+
+  api:
+    build: ./backend
+    environment: &backend-env
+      EC_DATABASE_URL: postgresql+asyncpg://ec:ec@db:5432/evidence_compass
+      # Подключение к модели через OpenAI-совместимый API (ADR 0007): окружение или .env рядом
+      # с compose. Пустой EC_LLM_BASE_URL — OpenRouter.
+      EC_LLM_BASE_URL: ${EC_LLM_BASE_URL:-}
+      EC_LLM_API_KEY: ${EC_LLM_API_KEY:-}
+      EC_LLM_MODEL: ${EC_LLM_MODEL:-}
+      EC_OPENROUTER_PROVIDERS: ${EC_OPENROUTER_PROVIDERS:-}
+      # Прежние имена подключения; действуют, если новые не заданы.
+      EC_OPENROUTER_API_KEY: ${EC_OPENROUTER_API_KEY:-}
+      EC_OPENROUTER_MODEL: ${EC_OPENROUTER_MODEL:-}
+      # Unpaywall ищет открытый PDF по DOI только с адресом для связи.
+      EC_UNPAYWALL_EMAIL: ${EC_UNPAYWALL_EMAIL:-}
+      EC_DOCUMENTS_DIR: /data/documents
+    # Версии документов на отдельном томе, общем для api и worker (ADR 0008).
+    volumes:
+      - documents:/data/documents
+    depends_on:
+      db:
+        condition: service_healthy
+
+  # Выполняет операции из PostgreSQL независимо от браузера (ADR 0008).
+  worker:
+    build: ./backend
+    command: ["uv", "run", "--no-sync", "python", "-m", "evidence_compass.worker"]
+    environment: *backend-env
+    volumes:
+      - documents:/data/documents
+    # Перезапуск, пока api не применил миграции, и после сбоя: worker вернёт операцию в очередь.
+    restart: unless-stopped
+    depends_on:
+      - api
+
+  web:
+    build: ./frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - api
+
+volumes:
+  pgdata:
+  documents:

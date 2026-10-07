@@ -1,0 +1,42 @@
+@import "@fontsource-variable/inter";
+@import "tailwindcss";
+
+/* Токены сняты с макетов docs/ux/mocks (workflow-v3). */
+@theme {
+  --font-sans: "Inter Variable", system-ui, sans-serif;
+
+  --color-canvas: #f6f6fa;
+  --color-surface: #ffffff;
+  --color-line: #e6e6ef;
+  --color-ink: #1b1b2b;
+  --color-ink-muted: #6b6b80;
+  --color-link: #3a3fbf;
+
+  --color-accent: #5a2ff0;
+  --color-accent-strong: #4a22d6;
+  --color-accent-soft: #f1ecfe;
+
+  --color-success: #1e9e5a;
+  --color-success-soft: #e6f5ec;
+  --color-success-ink: #13703f;
+  --color-warning: #ef8a14;
+  --color-warning-soft: #fff1e1;
+  --color-warning-ink: #a4520a;
+  --color-neutral-soft: #ededf2;
+
+  --text-title: 1.625rem;
+  --text-title--line-height: 2rem;
+  --text-body: 0.9375rem;
+  --text-body--line-height: 1.5rem;
+  --text-caption: 0.8125rem;
+  --text-caption--line-height: 1.125rem;
+
+  --spacing-gutter: 1.25rem;
+
+  --radius-panel: 0.5rem;
+  --radius-control: 0.375rem;
+}
+
+body {
+  @apply bg-canvas font-sans text-body text-ink antialiased;
+}
